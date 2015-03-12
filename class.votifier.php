@@ -34,7 +34,7 @@ EOF;
 		// Set voting time
 		$this->iVoteTimeStamp = time();
 		// Details of the vote
-		$sVoteString = "VOTE\n" . $this->sServerlist . "\n" . $this->sUsername . "\n" . $this->sUserAddress . "\n" . $this->iVoteTimeStamp . "\n";
+		$sVoteString = 'VOTE' . "\n" . $this->sServerlist . "\n" . $this->sUsername . "\n" . $this->sUserAddress . "\n" . $this->iVoteTimeStamp . "\n";
 		// Fill blanks to make packet lenght 256
 		$leftover = (256 - strlen($sVoteString)) / 2;
 		while($leftover > 0)
