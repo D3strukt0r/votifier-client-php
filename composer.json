@@ -1,19 +1,37 @@
 {
 	"name": "OrbitronDev/BukkitVotifier",
+	"description": "Simple Tool to send vote request to a server which has the Votifier plugin.",
+	"version": "1.0.0",
+	"type": "library",
+	"keywords": [
+		"minecraft",
+		"vote",
+		"votifier",
+	],
+	"homepage": "https://github.com/OrbitronDev/VotifierPHP",
+	"time": "2015-09-06 21:52:00",
     "license": "MIT",
     "authors": [
         {
             "name": "Manuele Vaccari",
-            "email": "vaccari.m@hotmail.com"
+            "email": "vaccari.m@hotmail.com",
+            "role": "Developer"
         }
     ],
+    "support": {
+    	"email": "team-orbitron@hotmail.com",
+    	"source": "https://github.com/OrbitronDev/VotifierPHP",
+    	"docs": "https://github.com/OrbitronDev/VotifierPHP"
+    },
 	"required": {
 		"php": ">=5.3.2"
 	},
 	"required-dev": {
 		"phpunit/phpunit": "3.7.x-dev"
 	},
-	"autoload" : {
-		"psr-4" : { "BukkitVotifier" : "src/" }
+	"autoload": {
+		"psr-4": {
+			"BukkitVotifier\\": "src/"
+		}
 	}
 }
