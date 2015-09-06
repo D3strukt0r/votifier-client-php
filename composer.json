@@ -1,4 +1,12 @@
 {
+	"name": "OrbitronDev/BukkitVotifier",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Manuele Vaccari",
+            "email": "vaccari.m@hotmail.com"
+        }
+    ],
 	"required": {
 		"php": ">=5.3.2"
 	},
