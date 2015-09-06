@@ -1,7 +1,6 @@
 <?php
 
-// If you want to use namespaces
-// namespace Bukkit;
+namespace BukkitVotifier;
 
 class Votifier
 {
@@ -13,7 +12,7 @@ class Votifier
 	private $iVoteTimeStamp	= '';
 	private $sServerlist	= '';
 	
-	function __construct($sServerIP, $iVotifierPort, $sPublicKey, $sUsername, $sServerlist)
+	function __construct($sServerIP, $iVotifierPort, $sPublicKey, $sUsername, $sServerlist, $sUserIP)
 	{
 		$this->sServerIP		= $sServerIP;
 		$this->iVotifierPort	= $iVotifierPort;
@@ -25,7 +24,7 @@ $this->sPublicKey
 -----END PUBLIC KEY-----
 EOF;
 		$this->sUsername		= preg_replace('/[^A-Za-z0-9_]+/', '', $sUsername); // Replace username to letters, numbers an "_"
-		$this->sUserAddress 	= $_SERVER['REMOTE_ADDR']; // Get user IP
+		$this->sUserAddress 	= $sUserIP; // Get user IP
 		$this->sServerlist		= $sServerlist;
 	}
 	
