@@ -6,6 +6,6 @@
 		"phpunit/phpunit": "3.7.x-dev"
 	},
 	"autoload" : {
-		"psr-0" : { "BukkitVotifier" : "src/" }
+		"psr-4" : { "BukkitVotifier" : "src/" }
 	}
 }
