@@ -1,4 +1,4 @@
-Minecraft-Bukkit-Votifier-php [![Build Status](https://travis-ci.org/OrbitronDev/VotifierPHP.svg?branch=master)](https://travis-ci.org/OrbitronDev/VotifierPHP)
+Minecraft-Bukkit-Votifier-php [![Build Status](https://travis-ci.org/OrbitronDev/BukkitVotifier.svg?branch=master)](https://travis-ci.org/OrbitronDev/BukkitVotifier)
 =================
 This php script allows easy using of the bukkit plugin Votifier
 
