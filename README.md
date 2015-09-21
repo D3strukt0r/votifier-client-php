@@ -2,7 +2,7 @@ Minecraft-Bukkit-Votifier-php [![Build Status](https://travis-ci.org/OrbitronDev
 =================
 This php script allows easy using of the bukkit plugin Votifier
 
-To Test it on the web
+To Test it on the web:
 ```html+php
 <?php
 
