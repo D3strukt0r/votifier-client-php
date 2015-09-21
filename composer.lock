@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3f28e6b6f8be9fb7ece523f5a75f4b79",
+    "hash": "8558b5dbe5c517eaf1449fed04313b28",
     "packages": [],
     "packages-dev": [
         {
@@ -371,16 +371,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.7.3",
+            "version": "v2.7.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Yaml.git",
-                "reference": "71340e996171474a53f3d29111d046be4ad8a0ff"
+                "reference": "2dc7b06c065df96cc686c66da2705e5e18aef661"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/71340e996171474a53f3d29111d046be4ad8a0ff",
-                "reference": "71340e996171474a53f3d29111d046be4ad8a0ff",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/2dc7b06c065df96cc686c66da2705e5e18aef661",
+                "reference": "2dc7b06c065df96cc686c66da2705e5e18aef661",
                 "shasum": ""
             },
             "require": {
@@ -416,7 +416,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2015-07-28 14:07:07"
+            "time": "2015-08-24 07:13:45"
         }
     ],
     "aliases": [],

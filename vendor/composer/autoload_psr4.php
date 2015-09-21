@@ -7,5 +7,4 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Symfony\\Component\\Yaml\\' => array($vendorDir . '/symfony/yaml'),
-    'BukkitVotifier\\' => array($baseDir . '/src/BukkitVotifier'),
 );
