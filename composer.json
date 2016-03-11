@@ -30,7 +30,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Votifier\Client": "src/"
+            "Votifier\\Client": "src/"
         }
     }
 }
