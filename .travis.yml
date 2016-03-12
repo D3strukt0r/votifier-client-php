@@ -17,7 +17,7 @@ cache:
 
 before_script:
   - composer self-update
-  - composer install --dev --no-interaction
+  - composer install --no-interaction
 #  - wget http://getspigot.org/jenkins/job/Spigot/lastSuccessfulBuild/artifact/spigot-1.9.jar
 #  - printf "eula=true" > eula.txt
 #  - mkdir plugins
@@ -30,8 +30,8 @@ script:
   - phpunit
 
 after_success:
-#  - php vendor/bin/coveralls -v -c .coveralls.yml
-  - travis_retry php vendor/bin/coveralls -v --root_dir=src/
+  - php vendor/bin/coveralls -v -c .coveralls.yml --root_dir=src/
+#  - travis_retry php vendor/bin/coveralls -v --root_dir=src/
 
 matrix:
 #  fast_finish: true
