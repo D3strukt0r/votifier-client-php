@@ -29,3 +29,9 @@ if($vote->send()) {
     // Could not send Vote. Normally this happens when the client can't create a connection.
 }
 ```
+
+## API
+
+You can use these function:
+  * **__contruct($server_ip, $votifier_port, $public_key, $username, $server_list, $user_ip)**, initialized the object with the required informations
+  * **send()**, creates socket to the server and sends the vote package
