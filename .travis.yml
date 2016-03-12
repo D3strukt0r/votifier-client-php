@@ -10,8 +10,8 @@ php:
 
 sudo: false
 
-cache:
-  directories:
+#cache:
+#  directories:
 #    - vendor
 #    - $HOME/.composer/cache
 
@@ -30,7 +30,7 @@ script:
 #  - mkdir build/cov
   - phpunit
 
-after_success:
+#after_success:
 #  - php vendor/bin/phpcov.php --help
 #  - php vendor/bin/phpcov.php merge --clover build/logs/clover.xml build/cov
 #  - php vendor/bin/coveralls -v -c .coveralls.yml --root_dir=src/
