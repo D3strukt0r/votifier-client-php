@@ -19,8 +19,8 @@
     ],
     "support": {
     	"email": "team-orbitron@hotmail.com",
-    	"source": "https://github.com//D3strukt0r/Votifier-PHP-Client",
-    	"docs": "https://github.com//D3strukt0r/Votifier-PHP-Client/wiki"
+    	"source": "https://github.com/D3strukt0r/Votifier-PHP-Client",
+    	"docs": "https://github.com/D3strukt0r/Votifier-PHP-Client/wiki"
     },
     "require": {
         "php": ">=5.3.2"
