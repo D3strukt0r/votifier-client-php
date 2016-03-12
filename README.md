@@ -7,7 +7,7 @@ Votifier PHP Client
 
 [![Travis](https://img.shields.io/travis/D3strukt0r/Votifier-PHP-Client.svg)]()
 [![Coveralls](https://img.shields.io/coveralls/jekyll/jekyll.svg)]()
-[![SensioLabs Insight](https://img.shields.io/sensiolabs/i/45afb680-d4e6-4e66-93ea-bcfa79eb8a87.svg)]()
+[![SensioLabs Insight](https://img.shields.io/sensiolabs/i/7cce6f21-d05b-4b97-9191-080bc88d704d.svg)]()
 
 This php script allows easy using of the bukkit plugin Votifier
 
