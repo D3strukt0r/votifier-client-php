@@ -18,7 +18,6 @@ cache:
 before_script:
   - composer self-update
   - composer install --dev
-  - composer require satooshi/php-coveralls:* --dev
 #  - wget http://getspigot.org/jenkins/job/Spigot/lastSuccessfulBuild/artifact/spigot-1.9.jar
 #  - printf "eula=true" > eula.txt
 #  - mkdir plugins
