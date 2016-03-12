@@ -1,13 +1,13 @@
 Votifier PHP Client
 =================
-[![Packagist](https://img.shields.io/packagist/v/d3strukt0r/votifier-client.svg)]()
-[![Packagist](https://img.shields.io/packagist/dt/d3strukt0r/votifier-client.svg)]()
-[![Packagist Pre Release](https://img.shields.io/packagist/vpre/d3strukt0r/votifier-client.svg)]()
-[![Packagist](https://img.shields.io/packagist/l/d3strukt0r/votifier-client.svg)]()
+[![Packagist](https://img.shields.io/packagist/v/d3strukt0r/votifier-client.svg)](https://packagist.org/packages/d3strukt0r/votifier-client)
+[![Packagist](https://img.shields.io/packagist/dt/d3strukt0r/votifier-client.svg)](https://packagist.org/packages/d3strukt0r/votifier-client)
+[![Packagist Pre Release](https://img.shields.io/packagist/vpre/d3strukt0r/votifier-client.svg)](https://packagist.org/packages/d3strukt0r/votifier-client)
+[![Packagist](https://img.shields.io/packagist/l/d3strukt0r/votifier-client.svg)](https://github.com/D3strukt0r/Votifier-PHP-Client/blob/master/LICENSE)
 
-[![Travis](https://img.shields.io/travis/D3strukt0r/Votifier-PHP-Client.svg)]()
-[![Coveralls](https://img.shields.io/coveralls/jekyll/jekyll.svg)]()
-[![SensioLabs Insight](https://img.shields.io/sensiolabs/i/7cce6f21-d05b-4b97-9191-080bc88d704d.svg)]()
+[![Travis](https://img.shields.io/travis/D3strukt0r/Votifier-PHP-Client.svg)](https://travis-ci.org/D3strukt0r/Votifier-PHP-Client)
+[![Coveralls](https://img.shields.io/coveralls/jekyll/jekyll.svg)](https://coveralls.io/github/D3strukt0r/Votifier-PHP-Client)
+[![SensioLabs Insight](https://img.shields.io/sensiolabs/i/7cce6f21-d05b-4b97-9191-080bc88d704d.svg)](https://insight.sensiolabs.com/projects/7cce6f21-d05b-4b97-9191-080bc88d704d)
 
 This php script allows easy using of the bukkit plugin Votifier
 
