@@ -27,10 +27,13 @@ before_script:
 script:
   - mkdir build
   - mkdir build/logs
+  - mkdir build/cov
   - phpunit
 
 after_success:
-  - php vendor/bin/coveralls -v -c .coveralls.yml --root_dir=src/
+  - php vendor/bin/phpcov.php --help
+  - php vendor/bin/phpcov.php merge --clover build/logs/clover.xml build/cov
+#  - php vendor/bin/coveralls -v -c .coveralls.yml --root_dir=src/
 #  - travis_retry php vendor/bin/coveralls -v --root_dir=src/
 
 matrix:
