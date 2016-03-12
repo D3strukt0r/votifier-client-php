@@ -1,4 +1,4 @@
-Votifier PHP Client [![Travis](https://img.shields.io/travis/D3strukt0r/Votifier-PHP-Client.svg)](https://travis-ci.org/D3strukt0r/Votifier-PHP-Client) [![Packagist](https://img.shields.io/packagist/dt/D3strukt0r/Votifier-PHP-Client.svg)](https://packagist.org/packages/d3strukt0r/votifier-client)
+Votifier PHP Client [![Travis](https://img.shields.io/travis/D3strukt0r/Votifier-PHP-Client.svg)](https://travis-ci.org/D3strukt0r/Votifier-PHP-Client) [![Packagist](https://img.shields.io/packagist/dt/d3strukt0r/votifier-client.svg)](https://packagist.org/packages/d3strukt0r/votifier-client) [![Packagist](https://img.shields.io/packagist/v/d3strukt0r/votifier-client.svg)]() [![Packagist](https://img.shields.io/packagist/l/d3strukt0r/votifier-client.svg)]()
 =================
 This php script allows easy using of the bukkit plugin Votifier
 
