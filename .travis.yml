@@ -26,13 +26,12 @@ before_script:
 
 script:
   - mkdir build
-  - mkdir build/coverage
   - mkdir build/logs
   - phpunit
 
 after_success:
 #  - php vendor/bin/coveralls -v -c .coveralls.yml
-  - travis_retry php vendor/bin/coveralls -v
+  - travis_retry php vendor/bin/coveralls -v --root_dir=src/
 
 matrix:
 #  fast_finish: true
