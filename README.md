@@ -6,7 +6,7 @@ This php script allows easy using of the bukkit plugin Votifier
 
 Add the client using [Composer](http://getcomposer.org/).
 ```
-$ composer require d3strukt0r/votifier-client ~1.0
+$ composer require d3strukt0r/votifier-client dev-master
 ```
 
 ## Usage
