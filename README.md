@@ -1,4 +1,5 @@
-Minecraft-Bukkit-Votifier-php [![Build Status](https://travis-ci.org/D3strukt0r/Votifier-PHP-Client.svg?branch=master)](https://travis-ci.org/D3strukt0r/Votifier-PHP-Client)
+Votifier PHP Client
+[![Travis](https://img.shields.io/travis/D3strukt0r/Votifier-PHP-Client.svg)](https://travis-ci.org/D3strukt0r/Votifier-PHP-Client) [![Packagist](https://img.shields.io/packagist/dt/D3strukt0r/Votifier-PHP-Client.svg)](https://packagist.org/packages/d3strukt0r/votifier-client)
 =================
 This php script allows easy using of the bukkit plugin Votifier
 
