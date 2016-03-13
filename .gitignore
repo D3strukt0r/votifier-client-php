@@ -2,9 +2,12 @@
 # Project Files
 # =========================
 
-# IDE
+# IntelliJ project files
 # =========================
 /.idea/
+*.iml
+out
+gen
 
 # Composer .gitignore #
 # =========================
