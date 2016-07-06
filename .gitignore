@@ -2,6 +2,16 @@
 # Project Files
 # =========================
 
+<<<<<<< HEAD
+=======
+# IntelliJ project files
+# =========================
+/.idea/
+*.iml
+out
+gen
+
+>>>>>>> origin/master
 # Composer .gitignore #
 # =========================
 composer.phar
