@@ -1,9 +1,12 @@
 language: php
+
 sudo: false
+dist: trusty
 
 cache:
   directories:
     - $HOME/.composer/cache
+    - $HOME/mc-server
 
 matrix:
   fast_finish: true
@@ -21,16 +24,30 @@ matrix:
     - php: nightly
     - php: hhvm
 
+addons:
+  apt:
+    packages:
+      - oracle-java8-set-default
+
 before_script:
   - if [[ $TRAVIS_PHP_VERSION != hhvm ]]; then phpenv config-rm xdebug.ini; fi;
   - composer self-update
   - composer install --no-interaction
-  - mkdir server
-  - wget https://cdn.getbukkit.org/spigot/spigot-1.12.2.jar -P server/
-  - printf "eula=true" > server/eula.txt
-  - mkdir server/plugins
-  - wget http://addons-origin.cursecdn.com/files/886/407/votifier-1.9.jar -P server/plugins/
-  - java -Xms512M -Xmx1024M -jar server/spigot-1.12.2.jar &
+  - |
+    if [ ! -f "$HOME/mc-server/spigot-1.12.2.jar" ]; then
+      mkdir -p $HOME/mc-server
+      wget https://cdn.getbukkit.org/spigot/spigot-1.12.2.jar -P $HOME/mc-server/
+    fi
+  - |
+    if [ ! -f "$HOME/mc-server/eula.txt" ]; then
+      printf "eula=true" > $HOME/mc-server/eula.txt
+    fi
+  - |
+    if [ ! -f "$HOME/mc-server/plugins/votifier-1.9.jar" ]; then
+      mkdir -p $HOME/mc-server/plugins
+      wget http://addons-origin.cursecdn.com/files/886/407/votifier-1.9.jar -P $HOME/mc-server/plugins/
+    fi
+  - java -Xms512M -Xmx1024M -jar $HOME/mc-server/spigot-1.12.2.jar &
 
 script:
   - composer run test
