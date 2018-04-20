@@ -38,19 +38,14 @@ before_script:
       mkdir -p $HOME/mc-server
       wget https://cdn.getbukkit.org/spigot/spigot-1.12.2.jar -P $HOME/mc-server/
     fi
-  - |
-    if [ ! -f "$HOME/mc-server/eula.txt" ]; then
-      printf "eula=true" > $HOME/mc-server/eula.txt
-    fi
+  - printf "eula=true" > $HOME/mc-server/eula.txt
   - |
     if [ ! -f "$HOME/mc-server/plugins/votifier-1.9.jar" ]; then
       mkdir -p $HOME/mc-server/plugins
       wget http://addons-origin.cursecdn.com/files/886/407/votifier-1.9.jar -P $HOME/mc-server/plugins/
     fi
   - java -Xms512M -Xmx1024M -jar $HOME/mc-server/spigot-1.12.2.jar
-  - stop
-  - java -Xms512M -Xmx1024M -jar $HOME/mc-server/spigot-1.12.2.jar &
-  - travis_retry export VOTIFIER_KEY=$(cat $HOME/plugins/Votifier/rsa/public.key)
+  - export VOTIFIER_KEY=$(cat $HOME/plugins/Votifier/rsa/public.key)
 
 script:
   - composer run test
