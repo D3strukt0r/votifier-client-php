@@ -45,10 +45,9 @@ before_script:
       wget http://addons-origin.cursecdn.com/files/886/407/votifier-1.9.jar -P $HOME/mc-server/plugins/
     fi
   - java -Xms512M -Xmx1024M -jar $HOME/mc-server/spigot-1.12.2.jar
-  - export VOTIFIER_KEY=$(cat $HOME/plugins/Votifier/rsa/public.key)
 
 script:
-  - composer run test
+  - VOTIFIER_KEY=$(cat $HOME/plugins/Votifier/rsa/public.key); composer run test
 
 after_script:
   - |
