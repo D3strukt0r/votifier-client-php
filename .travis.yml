@@ -1,19 +1,25 @@
 language: php
-
-php: 
-  - 5.3
-  - 5.4
-  - 5.5
-  - 5.6
-  - 7.0
-  - hhvm
-
 sudo: false
 
 cache:
   directories:
-#    - vendor
     - $HOME/.composer/cache
+
+matrix:
+  fast_finish: true
+  include:
+    - php: 5.3
+    - php: 5.4
+    - php: 5.5
+    - php: 5.6
+    - php: 7.0
+    - php: 7.1
+    - php: 7.2
+    - php: nightly
+    - php: hhvm
+  allow_failures:
+    - php: nightly
+    - php: hhvm
 
 before_script:
   - if [[ $TRAVIS_PHP_VERSION != hhvm ]]; then phpenv config-rm xdebug.ini; fi;
@@ -26,12 +32,14 @@ before_script:
 #  - java -Xms512M -Xmx1024M -jar spigot-1.9.jar
 
 script:
-  - phpunit
+  - composer run test
 
-matrix:
-  fast_finish: true
-  allow_failures:
-    - php: hhvm
+after_script:
+  - |
+    if [ -f "build/logs/clover.xml" ]; then
+      composer run upload-coveralls
+      composer run upload-scrutinizer
+    fi
 
 notifications:
   email: false

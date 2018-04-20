@@ -2,9 +2,10 @@
 
 namespace Votifier\Client;
 
+use PHPUnit\Framework\TestCase;
 use Votifier\Client\Vote;
 
-class VoteTest extends \PHPUnit_Framework_TestCase
+class VoteTest extends TestCase
 {
     private $vote = null;
 
@@ -13,12 +14,14 @@ class VoteTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $this->vote = new Vote('play.orbitrondev.org',
-                               '8192',
-                               'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAg/6Tm/z9+iCWBj3fuIfJbUzDA1lcIgg4yYeNk72vaBGmjZTg6Vlc5UywyylDN+czWAacFGeIEoFxRKdfHy+I8Sl9sXvX68Xzo5FbS0pe8fa2CP6cgRU8bW4pgXQTEjjzBvis/UZqIO/MUQaBkbiyW7VQWYxD2aaaMA8V98/tH3NJsoeH9pfVLj8SE0TvZMolLRbKR1tYkeMN3vCuAYQn94yG4c1rRy7xJj5snpAatTrfRC3p2e3b5XBaq6x0aqli+QbovhbMHDl8FQAaj6zbpgTlDKqcyj2RWs4dNFfeEZGju/vXiOfkNZX1LIz9zlWSBzSSoi2IO/nAs3MRhXUvyQIDAQAB',
-                               'D3strukt0r',
-                               'Votifier-PHP-Client Test',
-                               '127.0.0.1');
+        $this->vote = new Vote(
+            'localhost',
+            '8192',
+            'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoTc+zUuPLFASP1+JdYVHkT+nsFxOx+mo8yLPGyPA42w3QAZA3ZNzNXWK01gl9o6G3wmiHGi2lwgGW+3IAbOYuEa+Wv0STHE9IOf+T/tDRg0agjrNnWs7un8LUJL0UvI/hMRbrsPJeWy38PbTLC2Bvl0WhU3IsakUWs3mI6Q1INr924zjeCkngOMRjApiA5IJI0OznU50bNdanA6oIFxy83IBpgA4cnccWBSB2g80LDJOxCfUP7oJGw2VJqyBTR5Xi6lAoSv+9uGMTj99W+Ib6a42fLSe6a2FxmyHi7BU7n9W/LAPYxxmelsE3EIKxWK6UBk6i28fpbMi6S1KVV/6lwIDAQAB',
+            'D3strukt0r',
+            'Votifier-PHP-Client Test',
+            '127.0.0.1'
+        );
     }
 
     /**
