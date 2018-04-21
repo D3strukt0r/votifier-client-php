@@ -26,6 +26,7 @@
         "php": ">=5.3.2"
     },
     "require-dev": {
+        "ext-xdebug": "*",
         "php-coveralls/php-coveralls": "^2.0",
         "phpunit/phpunit": "^7"
     },
