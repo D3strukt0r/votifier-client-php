@@ -5,13 +5,14 @@ dist: trusty
 
 cache:
   directories:
-    - $HOME/.composer/cache
+    - $HOME/.composer/cache/files
 #    - $HOME/mc-server
 
 matrix:
   fast_finish: true
   include:
     - php: 5.3
+      dist: precise
     - php: 5.4
     - php: 5.5
     - php: 5.6
@@ -20,6 +21,7 @@ matrix:
     - php: 7.2
     - php: nightly
     - php: hhvm
+      env: HHVM=true
   allow_failures:
     - php: nightly
     - php: hhvm
@@ -29,10 +31,10 @@ matrix:
 #    packages:
 #      - oracle-java8-set-default
 
-before_script:
+install:
   - if [[ $TRAVIS_PHP_VERSION != hhvm ]]; then phpenv config-rm xdebug.ini; fi;
-  - composer self-update
-  - composer install --no-interaction
+  - composer install
+  - if [[ $HHVM == true ]]; then composer require "phpunit/phpunit:5.7"; fi
 #  - |
 #    if [ ! -f "$HOME/mc-server/spigot-1.12.2.jar" ]; then
 #      mkdir -p $HOME/mc-server
@@ -48,7 +50,9 @@ before_script:
 
 script:
 #  - VOTIFIER_KEY=$(cat $HOME/mc-server/plugins/Votifier/rsa/public.key); composer run test
-  - composer run test
+script:
+  - if [[ $HHVM == true ]]; then ./vendor/bin/phpunit .; fi
+  - if [[ $HHVM != true ]]; then phpunit .; fi
 
 after_script:
   - |
