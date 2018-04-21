@@ -49,6 +49,6 @@ class VoteTest extends TestCase
      */
     public function testValidResult()
     {
-        $this->assertEquals(true, $this->vote->send());
+        $this->assertTrue($this->vote->send());
     }
 }
