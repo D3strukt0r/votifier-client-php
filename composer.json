@@ -31,13 +31,13 @@
         "phpunit/phpunit": "^7"
     },
     "autoload": {
-        "psr-0": {
-            "Votifier\\Client\\": "src/"
+        "psr-4": {
+            "D3strukt0r\\VotifierClient\\": "src/"
         }
     },
     "autoload-dev": {
-        "psr-0": {
-            "Votifier\\Client\\": "tests/"
+        "psr-4": {
+            "D3strukt0r\\VotifierClient\\": "tests/"
         }
     },
     "archive": {
