@@ -3,6 +3,9 @@ language: php
 sudo: false
 dist: trusty
 
+notifications:
+  email: false
+
 cache:
   directories:
     - $HOME/.composer/cache/files
@@ -62,6 +65,16 @@ install:
       $HOME/bin/phpunit-4 self-update
     fi
   - |
+    if [[ $TRAVIS_PHP_VERSION == 5.3 ]] || [[ $TRAVIS_PHP_VERSION == 5.4 ]] || [[ $TRAVIS_PHP_VERSION == 5.5 ]]; then
+      ln -s $HOME/bin/phpunit-4 phpunit
+    elif [[ $TRAVIS_PHP_VERSION == 5.6 ]] || [[ $TRAVIS_PHP_VERSION == hhvm ]]; then
+      ln -s $HOME/bin/phpunit-5 phpunit
+    elif [[ $TRAVIS_PHP_VERSION == 7.0 ]]; then
+      ln -s $HOME/bin/phpunit-6 phpunit
+    else
+      ln -s $HOME/bin/phpunit-7 phpunit
+    fi
+  - |
     if [ ! -f "$HOME/bin/coveralls-2" ]; then
       wget -O $HOME/bin/coveralls-2 https://github.com/php-coveralls/php-coveralls/releases/download/v2.0.0/php-coveralls.phar
       chmod +x $HOME/bin/coveralls-2
@@ -76,12 +89,19 @@ install:
       $HOME/bin/coveralls-1 self-update
     fi
   - |
+    if [[ $TRAVIS_PHP_VERSION == 5.3 ]] || [[ $TRAVIS_PHP_VERSION == 5.4 ]]; then
+      ln -s $HOME/bin/coveralls-1 coveralls
+    else
+      ln -s $HOME/bin/coveralls-2 coveralls
+    fi
+  - |
     if [ ! -f "$HOME/bin/ocular" ]; then
       wget -O $HOME/bin/ocular https://scrutinizer-ci.com/ocular.phar
       chmod +x $HOME/bin/ocular
     else
       $HOME/bin/ocular self-update
     fi
+  - ln -s $HOME/bin/ocular ocular
 #  - |
 #    if [ ! -f "$HOME/mc-server/spigot-1.12.2.jar" ]; then
 #      mkdir -p $HOME/mc-server
@@ -97,27 +117,11 @@ install:
 
 script:
 #  - VOTIFIER_KEY=$(cat $HOME/mc-server/plugins/Votifier/rsa/public.key); ./phpunit
-  - |
-    if [[ $TRAVIS_PHP_VERSION == 5.3 ]] || [[ $TRAVIS_PHP_VERSION == 5.4 ]] || [[ $TRAVIS_PHP_VERSION == 5.5 ]]; then
-      $HOME/bin/phpunit-4
-    elif [[ $TRAVIS_PHP_VERSION == 5.6 ]] || [[ $TRAVIS_PHP_VERSION == hhvm ]]; then
-      $HOME/bin/phpunit-5
-    elif [[ $TRAVIS_PHP_VERSION == 7.0 ]]; then
-      $HOME/bin/phpunit-6
-    else
-      $HOME/bin/phpunit-7
-    fi
+  - ./phpunit
 
 after_script:
   - |
     if [ -f "build/logs/clover.xml" ]; then
-      if [[ $TRAVIS_PHP_VERSION == 5.3 ]] || [[ $TRAVIS_PHP_VERSION == 5.4 ]]; then
-        $HOME/bin/coveralls-1 -v
-      else
-        $HOME/bin/coveralls-2 -v
-      fi
-      $HOME/bin/ocular code-coverage:upload --format=php-clover build/logs/clover.xml
+      ./coveralls -v
+      ./ocular code-coverage:upload --format=php-clover build/logs/clover.xml
     fi
-
-notifications:
-  email: false
