@@ -2,6 +2,7 @@
 
 namespace D3strukt0r\VotifierClient\ServerType;
 
+use D3strukt0r\VotifierClient\VoteType\ClassicVote;
 use PHPUnit\Framework\TestCase;
 
 class ClassicVotifierTest extends TestCase
@@ -43,4 +44,10 @@ EOF;
         $this->assertFalse($this->obj->verifyConnection('VOTFI'));
         $this->assertTrue($this->obj->verifyConnection('VOTIFIER'));
     }
+
+    /*public function testPackagePreparation()
+    {
+        $string = $this->obj->preparePackage(new ClassicVote('mock_user', 'mock_service', 'mock_address'));
+        // Cannot test openssl_encrypt
+    }*/
 }

@@ -36,7 +36,7 @@ $key
 -----END PUBLIC KEY-----
 EOF;
         $this->assertSame($key, $this->obj->getPublicKey());
-        $this->assertTrue($key, $this->obj->isProtocolV2());
+        $this->assertTrue($this->obj->isProtocolV2());
     }
 
     public function testHeaderVerification()
@@ -48,6 +48,8 @@ EOF;
 
     public function testPackagePreparationV2()
     {
-        $this->assertStringStartsWith('s:\\', $this->obj->preparePackageV2(new ClassicVote('mock_user', 'mock_service', 'mock_address'), 'mock_challenge'));
+        $string = $this->obj->preparePackageV2(new ClassicVote('mock_user', 'mock_service', 'mock_address'), 'mock_challenge');
+        $this->assertStringStartsWith('s:', $string);
+        $this->assertStringEndsWith('{"signature":"1i1SWPCOSTg2HKbP8vSfWgA14R+mzaeUDeZA\/Oi4PO4=","payload":"{\"username\":\"mock_user\",\"serviceName\":\"mock_service\",\"timestamp\":null,\"address\":\"mock_address\",\"challenge\":\"mock_challenge\"}"}', $string);
     }
 }

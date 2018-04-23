@@ -29,8 +29,8 @@ class VoteTest extends TestCase
         $this->assertInstanceOf('D3strukt0r\VotifierClient\Vote', $this->obj);
     }
 
-    public function testValidResult()
+    /*public function testValidResult()
     {
-        //$this->assertTrue($this->obj->send());
-    }
+        $this->assertTrue($this->obj->send());
+    }*/
 }
