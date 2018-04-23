@@ -40,29 +40,21 @@ install:
     if [ ! -f "$HOME/bin/phpunit-7" ]; then
       wget -O $HOME/bin/phpunit-7 https://phar.phpunit.de/phpunit-7.phar
       chmod +x $HOME/bin/phpunit-7
-    else
-      $HOME/bin/phpunit-7 self-update
     fi
   - |
     if [ ! -f "$HOME/bin/phpunit-6" ]; then
       wget -O $HOME/bin/phpunit-6 https://phar.phpunit.de/phpunit-6.phar
       chmod +x $HOME/bin/phpunit-6
-    else
-      $HOME/bin/phpunit-6 self-update
     fi
   - |
     if [ ! -f "$HOME/bin/phpunit-5" ]; then
       wget -O $HOME/bin/phpunit-5 https://phar.phpunit.de/phpunit-5.phar
       chmod +x $HOME/bin/phpunit-5
-    else
-      $HOME/bin/phpunit-5 self-update
     fi
   - |
     if [ ! -f "$HOME/bin/phpunit-4" ]; then
       wget -O $HOME/bin/phpunit-4 https://phar.phpunit.de/phpunit-4.phar
       chmod +x $HOME/bin/phpunit-4
-    else
-      $HOME/bin/phpunit-4 self-update
     fi
   - |
     if [[ $TRAVIS_PHP_VERSION == 5.3 ]] || [[ $TRAVIS_PHP_VERSION == 5.4 ]] || [[ $TRAVIS_PHP_VERSION == 5.5 ]]; then
@@ -78,15 +70,11 @@ install:
     if [ ! -f "$HOME/bin/coveralls-2" ]; then
       wget -O $HOME/bin/coveralls-2 https://github.com/php-coveralls/php-coveralls/releases/download/v2.0.0/php-coveralls.phar
       chmod +x $HOME/bin/coveralls-2
-    else
-      $HOME/bin/coveralls-2 self-update
     fi
   - |
     if [ ! -f "$HOME/bin/coveralls-1" ]; then
       wget -O $HOME/bin/coveralls-1 https://github.com/php-coveralls/php-coveralls/releases/download/v1.1.0/coveralls.phar
       chmod +x $HOME/bin/coveralls-1
-    else
-      $HOME/bin/coveralls-1 self-update
     fi
   - |
     if [[ $TRAVIS_PHP_VERSION == 5.3 ]] || [[ $TRAVIS_PHP_VERSION == 5.4 ]]; then
@@ -98,8 +86,6 @@ install:
     if [ ! -f "$HOME/bin/ocular" ]; then
       wget -O $HOME/bin/ocular https://scrutinizer-ci.com/ocular.phar
       chmod +x $HOME/bin/ocular
-    else
-      $HOME/bin/ocular self-update
     fi
   - ln -s $HOME/bin/ocular ocular
 #  - |
