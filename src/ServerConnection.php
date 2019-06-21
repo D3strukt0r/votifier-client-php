@@ -40,8 +40,7 @@ class ServerConnection
     {
         $this->serverType = $serverType;
         $s = fsockopen($serverType->getHost(), $serverType->getPort(), $errno, $errstr, 3);
-        if (!$s) {
-            fclose($s);
+        if (false === $s) {
             throw new \Exception($errstr, $errno);
         }
         $this->s = $s;
