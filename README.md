@@ -20,7 +20,7 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them
 
 ```
-PHP Project (PHP 5.3+)
+PHP Project (PHP 7.1+)
 Minecraft server with the Votifier plugin
 ```
 
@@ -78,7 +78,7 @@ try {
 }
 ```
 
-The full API documentation can be found on [https://d3strukt0r.github.io/Votifier-PHP-Client/]()
+The full API documentation can be found on [https://d3strukt0r.github.io/Votifier-PHP-Client/api]()
 
 ## Running the tests
 
@@ -94,10 +94,10 @@ Run test scripts
 
 ### Coding style tests and fixes
 
-Download PHP CS Fixer from [here](https://cs.symfony.com/download/php-cs-fixer-v2.phar).
+Download PHP CS Fixer from [here](https://cs.symfony.com/download/php-cs-fixer-v2.phar) and rename to `php-cs-fixer`.
 
 ```bash
-php php-cs-fixer-v2.phar fix
+php php-cs-fixer fix
 ```
 
 Download PHP_CodeSniffer from [here](https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar) and [here](https://squizlabs.github.io/PHP_CodeSniffer/phpcbf.phar).
@@ -108,10 +108,10 @@ Will be added later
 
 ### Code documentation
 
-Download `phpDocumentor.phar` from [here](http://phpdoc.org/phpDocumentor.phar).
+Download `phpDocumentor.phar` from [here](http://phpdoc.org/phpDocumentor.phar) and rename to `phpdoc`.
 
 ```bash
-php phpDocumentor.phar -d ./src -t ./docs
+php phpdoc -d ./src -t ./docs/api
 ```
 
 ## Contributing
