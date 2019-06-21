@@ -7,6 +7,7 @@
 
 [![Travis](https://img.shields.io/travis/D3strukt0r/Votifier-PHP-Client.svg)](https://travis-ci.org/D3strukt0r/Votifier-PHP-Client)
 [![Coveralls](https://img.shields.io/coveralls/D3strukt0r/Votifier-PHP-Client.svg)](https://coveralls.io/github/D3strukt0r/Votifier-PHP-Client)
+[![Scrutinizer code quality (GitHub/Bitbucket)](https://img.shields.io/scrutinizer/quality/g/D3strukt0r/Votifier-PHP-Client.svg)](https://scrutinizer-ci.com/g/D3strukt0r/Votifier-PHP-Client/)
 [![SensioLabs Insight](https://img.shields.io/sensiolabs/i/6a04543f-6719-4a46-b7a2-625713314753.svg)](https://insight.sensiolabs.com/projects/6a04543f-6719-4a46-b7a2-625713314753)
 
 This php script allows easy using of the Bukkit plugin Votifier
