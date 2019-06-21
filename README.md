@@ -133,7 +133,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Manuele Vaccari** - *Initial work* - [D3strukt0r](https://github.com/D3strukt0r)
+*   **Manuele Vaccari** - *Initial work* - [D3strukt0r](https://github.com/D3strukt0r)
 
 See also the list of [contributors](https://github.com/D3strukt0r/Votifier-PHP-Client/contributors) who participated in this project.
 
@@ -143,4 +143,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used (Especially Stackoverflow)
+*   Hat tip to anyone who's code was used (Especially Stackoverflow)
