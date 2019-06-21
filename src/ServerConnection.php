@@ -25,7 +25,7 @@ class ServerConnection
     private $serverType;
 
     /**
-     * @var resource The connection to the server
+     * @var false|resource The connection to the server
      */
     private $s;
 
