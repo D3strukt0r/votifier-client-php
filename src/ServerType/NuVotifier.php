@@ -64,14 +64,14 @@ class NuVotifier extends ClassicVotifier
     /**
      * {@inheritdoc}
      *
-     * @param bool|string $header (Required) The header that the plugin usually sends
+     * @param string|null $header (Required) The header that the plugin usually sends
      *
      * @return bool
      */
-    public function verifyConnection($header): bool
+    public function verifyConnection(?string $header): bool
     {
         $header_parts = explode(' ', $header);
-        if (false === $header || false === mb_strpos($header, 'VOTIFIER') || 3 !== \count($header_parts)) {
+        if (null === $header || false === mb_strpos($header, 'VOTIFIER') || 3 !== \count($header_parts)) {
             return false;
         }
 

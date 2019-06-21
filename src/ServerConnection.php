@@ -83,14 +83,18 @@ class ServerConnection
      *
      * @param int $length (Optional) The length of the requested string
      *
-     * @return bool|string
+     * @return string|null
      */
-    public function receive(int $length = 64)
+    public function receive(int $length = 64): ?string
     {
         if (!$this->s) {
-            return false;
+            return null;
         }
 
-        return fread($this->s, $length);
+        if (!$s = fread($this->s, $length)) {
+            return null;
+        }
+
+        return $s;
     }
 }
