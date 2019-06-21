@@ -4,11 +4,9 @@
  * Votifier PHP Client
  *
  * @package   VotifierClient
- *
  * @author    Manuele Vaccari <manuele.vaccari@gmail.com>
- * @copyright Copyright (c) 2017-2018 Manuele Vaccari <manuele.vaccari@gmail.com>
+ * @copyright Copyright (c) 2017-2019 Manuele Vaccari <manuele.vaccari@gmail.com>
  * @license   https://github.com/D3strukt0r/Votifier-PHP-Client/blob/master/LICENSE.md MIT License
- *
  * @link      https://github.com/D3strukt0r/Votifier-PHP-Client
  */
 
@@ -41,11 +39,11 @@ class ServerConnection
     public function __construct(ServerTypeInterface $serverType)
     {
         $this->serverType = $serverType;
-        $this->s = fsockopen($serverType->getHost(), $serverType->getPort(), $errno, $errstr, 3);
-        if (!$this->s) {
-            $this->__destruct();
+        $s = fsockopen($serverType->getHost(), $serverType->getPort(), $errno, $errstr, 3);
+        if (false === $s) {
             throw new \Exception($errstr, $errno);
         }
+        $this->s = $s;
     }
 
     /**
@@ -65,7 +63,7 @@ class ServerConnection
      *
      * @return bool
      */
-    public function send($string)
+    public function send(string $string): bool
     {
         if (!$this->s) {
             return false;
@@ -85,14 +83,18 @@ class ServerConnection
      *
      * @param int $length (Optional) The length of the requested string
      *
-     * @return bool|string
+     * @return string|null
      */
-    public function receive($length = 64)
+    public function receive(int $length = 64): ?string
     {
         if (!$this->s) {
-            return false;
+            return null;
         }
 
-        return fread($this->s, $length);
+        if (!$s = fread($this->s, $length)) {
+            return null;
+        }
+
+        return $s;
     }
 }
