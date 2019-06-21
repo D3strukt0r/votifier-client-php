@@ -106,13 +106,13 @@ Download PHP_CodeSniffer from [here](https://squizlabs.github.io/PHP_CodeSniffer
 To see what mistakes exist in the code run:
 
 ```bash
-phpcs
+php phpcs
 ```
 
 And to fix it:
 
 ```bash
-phpcbf
+php phpcbf
 ```
 
 ### Code documentation
