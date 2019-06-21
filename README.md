@@ -25,6 +25,8 @@ PHP Project (PHP 7.1+)
 Minecraft server with the Votifier plugin
 ```
 
+**Starting from version 3.0.0, only PHP version 7.1 and up is supported.**
+
 ### Installing
 
 Add the client using [Composer](http://getcomposer.org/).
