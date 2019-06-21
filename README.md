@@ -103,8 +103,16 @@ php php-cs-fixer fix
 
 Download PHP_CodeSniffer from [here](https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar) and [here](https://squizlabs.github.io/PHP_CodeSniffer/phpcbf.phar).
 
+To see what mistakes exist in the code run:
+
 ```bash
-Will be added later
+phpcs
+```
+
+And to fix it:
+
+```bash
+phpcbf
 ```
 
 ### Code documentation

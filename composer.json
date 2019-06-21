@@ -55,6 +55,7 @@
             ".editorconfig",
             ".gitignore",
             ".php_cs.dist",
+            ".phpcs.xml",
             ".scrutinizer.yml",
             ".travis.yml",
             "CONTRIBUTING.md",
