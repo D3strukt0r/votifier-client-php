@@ -42,8 +42,13 @@ class NuVotifier extends ClassicVotifier
      *
      * @throws \Exception
      */
-    public function __construct(string $host, ?int $port, ?string $publicKey, bool $protocolV2 = false, ?string $token = null)
-    {
+    public function __construct(
+        string $host,
+        ?int $port,
+        ?string $publicKey,
+        bool $protocolV2 = false,
+        ?string $token = null
+    ) {
         if (null === $publicKey) {
             if ($protocolV2) {
                 $publicKey = 'empty';
