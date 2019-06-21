@@ -25,7 +25,7 @@ class ServerConnection
     private $serverType;
 
     /**
-     * @var false|resource The connection to the server
+     * @var resource The connection to the server
      */
     private $s;
 
@@ -39,11 +39,12 @@ class ServerConnection
     public function __construct(ServerTypeInterface $serverType)
     {
         $this->serverType = $serverType;
-        $this->s = fsockopen($serverType->getHost(), $serverType->getPort(), $errno, $errstr, 3);
-        if (!$this->s) {
-            $this->__destruct();
+        $s = fsockopen($serverType->getHost(), $serverType->getPort(), $errno, $errstr, 3);
+        if (!$s) {
+            fclose($s);
             throw new \Exception($errstr, $errno);
         }
+        $this->s = $s;
     }
 
     /**
