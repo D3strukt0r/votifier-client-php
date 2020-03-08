@@ -51,6 +51,7 @@
     },
     "archive": {
         "exclude": [
+            "/.idea",
             "/build",
             "/docs",
             "/tests",
