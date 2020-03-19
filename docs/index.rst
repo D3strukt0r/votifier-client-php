@@ -4,21 +4,26 @@
    :caption: First Steps
 
    pages/first-steps/prerequisities
-   pages/first-steps/first-server
 
 .. toctree::
    :maxdepth: 2
    :hidden:
    :caption: Getting Started
 
-   pages/getting-started/docker-cli
-   pages/getting-started/docker-compose
-   pages/getting-started/arguments
+   pages/getting-started/votifier
+   pages/getting-started/nuvotifier
 
 .. toctree::
    :maxdepth: 2
    :hidden:
-   :caption: About docker-spigot
+   :caption: API
+
+   pages/api/index
+
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+   :caption: About votifier-client-php
 
    pages/about/story
    pages/about/faq

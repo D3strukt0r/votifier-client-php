@@ -47,6 +47,10 @@ This php script allows easy using of the Bukkit plugin Votifier
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
+The full documentation can be found on [https://votifier-client-php-docs.manuele-vaccari.ch/]()
+
+The full API documentation can be found on [https://d3strukt0r.github.io/votifier-client-php/api/]()
+
 ### Prerequisites
 
 What things you need to install the software and how to install them
@@ -115,10 +119,6 @@ try {
     // Could not send Vote. Normally this happens when the client can't create a connection.
 }
 ```
-
-The full documentation can be found on [https://votifier-client-php-docs.manuele-vaccari.ch/]()
-
-The full API documentation can be found on [https://d3strukt0r.github.io/votifier-client-php/api/]()
 
 ## Running the tests
 
