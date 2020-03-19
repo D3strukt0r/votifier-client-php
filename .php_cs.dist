@@ -17,27 +17,21 @@ $finder = PhpCsFixer\Finder::create()
 
 return PhpCsFixer\Config::create()
     ->setRiskyAllowed(true)
-    ->setRules(array(
+    ->setRules([
+        '@PSR1' => true,
+        '@PSR2' => true,
+        '@PhpCsFixer' => true,
+        '@PhpCsFixer:risky' => true,
         '@Symfony' => true,
         '@Symfony:risky' => true,
-        'array_syntax' => array('syntax' => 'long'),
         'linebreak_after_opening_tag' => true,
         'mb_str_functions' => true,
         'no_php4_constructor' => true,
-        'no_unreachable_default_argument_value' => true,
-        'no_useless_else' => true,
-        'no_useless_return' => true,
-        'ordered_imports' => true,
-        'php_unit_strict' => true,
-        'phpdoc_order' => true,
-        'semicolon_after_instruction' => true,
-        'strict_comparison' => true,
-        'strict_param' => true,
-        'header_comment' => array(
-            'commentType' => 'PHPDoc',
+        'header_comment' => [
+            'comment_type' => 'PHPDoc',
             'header' => $header,
-        ),
-    ))
+        ],
+    ])
     ->setFinder($finder)
     ->setCacheFile(__DIR__.'/.php_coding_standard_cache.json')
 ;

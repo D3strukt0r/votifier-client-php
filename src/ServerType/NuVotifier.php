@@ -83,7 +83,7 @@ class NuVotifier extends ClassicVotifier
     public function verifyConnection(?string $header): bool
     {
         $header_parts = explode(' ', $header);
-        if (null === $header || false === mb_strpos($header, 'VOTIFIER') || 3 !== count($header_parts)) {
+        if (null === $header || false === mb_strpos($header, 'VOTIFIER') || 3 !== \count($header_parts)) {
             return false;
         }
 
