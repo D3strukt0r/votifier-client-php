@@ -39,5 +39,5 @@ return PhpCsFixer\Config::create()
         ),
     ))
     ->setFinder($finder)
-    ->setCacheFile(__DIR__.'/.php_cs.cache')
+    ->setCacheFile(__DIR__.'/.php_coding_standard_cache.json')
 ;
