@@ -50,6 +50,14 @@
             "D3strukt0r\\VotifierClient\\": "tests/"
         }
     },
+    "scripts": {
+        "test": "phpunit",
+        "check": "phpcs",
+        "fix": [
+            "phpcbf",
+            "php-cs-fixer fix"
+        ]
+    },
     "archive": {
         "exclude": [
             "/.idea",
