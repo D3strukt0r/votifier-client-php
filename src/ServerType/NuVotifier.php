@@ -100,15 +100,15 @@ class NuVotifier extends ClassicVotifier
      */
     public function preparePackageV2(VoteInterface $vote, string $challenge): string
     {
-        $payloadJson = json_encode(array(
+        $payloadJson = json_encode([
             'username' => $vote->getUsername(),
             'serviceName' => $vote->getServiceName(),
             'timestamp' => $vote->getTimestamp(),
             'address' => $vote->getAddress(),
             'challenge' => $challenge,
-        ));
+        ]);
         $signature = base64_encode(hash_hmac('sha256', $payloadJson, $this->token, true));
-        $messageJson = json_encode(array('signature' => $signature, 'payload' => $payloadJson));
+        $messageJson = json_encode(['signature' => $signature, 'payload' => $payloadJson]);
 
         return pack('nn', 0x733a, mb_strlen($messageJson)).$messageJson;
     }

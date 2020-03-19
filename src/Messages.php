@@ -33,14 +33,14 @@ class Messages
      */
     public static function get(int $messageCode, string $language = 'en'): string
     {
-        $messages = array(
-            'en' => array(
+        $messages = [
+            'en' => [
                 self::NOT_VOTIFIER => 'The connection does not belong to Votifier',
                 self::NOT_SENT_PACKAGE => 'Couldn\'t write to remote host',
                 self::NOT_RECEIVED_PACKAGE => 'Unable to read server response',
                 self::NUVOTIFIER_SERVER_ERROR => 'Votifier server error: {0}: {1}',
-            ),
-        );
+            ],
+        ];
 
         $requestedMessage = $messages[$language ?: 'en'][$messageCode];
 

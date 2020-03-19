@@ -56,7 +56,7 @@ class ClassicVotifier implements ServerTypeInterface
         $this->publicKey = wordwrap($this->publicKey, 65, "\n", true);
         $this->publicKey = <<<EOF
 -----BEGIN PUBLIC KEY-----
-$this->publicKey
+{$this->publicKey}
 -----END PUBLIC KEY-----
 EOF;
     }
