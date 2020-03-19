@@ -23,21 +23,21 @@ interface ServerTypeInterface
     /**
      * Returns the host.
      *
-     * @return string
+     * @return string returns the host
      */
     public function getHost(): string;
 
     /**
      * Returns the port.
      *
-     * @return int
+     * @return int returns the port
      */
     public function getPort(): int;
 
     /**
      * Returns the public key.
      *
-     * @return string
+     * @return string returns the public key
      */
     public function getPublicKey(): string;
 
@@ -46,14 +46,14 @@ interface ServerTypeInterface
      *
      * @param string $header (Required) The header that the plugin usually sends
      *
-     * @return bool
+     * @return bool returns true if connections is avilable, otherwise false
      */
     public function verifyConnection(?string $header): bool;
 
     /**
      * Sends the vote package to the server.
      *
-     * @param ServerConnection $connection (Required) The connection type to the plugin
+     * @param serverConnection $connection (Required) The connection type to the plugin
      * @param VoteInterface    $vote       (Required) The vote type package
      *
      * @throws \Exception

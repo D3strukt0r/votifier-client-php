@@ -20,22 +20,22 @@ use DateTime;
 class ClassicVote implements VoteInterface
 {
     /**
-     * @var string The name of the list/service
+     * @var string the name of the list/service
      */
     private $serviceName;
 
     /**
-     * @var string The username who wants to receive the rewards
+     * @var string the username who wants to receive the rewards
      */
     private $username;
 
     /**
-     * @var string The IP Address of the user
+     * @var string the IP Address of the user
      */
     private $address;
 
     /**
-     * @var \DateTime|null The time when the vote will be sent
+     * @var \DateTime|null the time when the vote will be sent
      */
     private $timestamp;
 

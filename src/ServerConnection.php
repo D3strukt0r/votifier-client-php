@@ -21,19 +21,19 @@ use Exception;
 class ServerConnection
 {
     /**
-     * @var ServerTypeInterface The server type information package
+     * @var ServerTypeInterface the server type information package
      */
     private $serverType;
 
     /**
-     * @var resource The connection to the server
+     * @var resource the connection to the server
      */
     private $s;
 
     /**
      * Creates the ServerConnection object.
      *
-     * @param ServerTypeInterface $serverType (Required) The server type information package to connect to
+     * @param serverTypeInterface $serverType (Required) The server type information package to connect to
      *
      * @throws \Exception
      */
@@ -58,11 +58,11 @@ class ServerConnection
     }
 
     /**
-     * Sends a string to the server and return true if it worked or false if not.
+     * Sends a string to the server.
      *
      * @param string $string (Required) The string which should be sent to the server
      *
-     * @return bool
+     * @return bool returns true if string was sent, or false if not
      */
     public function send(string $string): bool
     {
@@ -80,11 +80,11 @@ class ServerConnection
     }
 
     /**
-     * Reads a string which is being received from the server. Returns the string.
+     * Reads a string which is being received from the server.
      *
      * @param int $length (Optional) The length of the requested string
      *
-     * @return string|null
+     * @return string|null returns the string that was received from the server
      */
     public function receive(int $length = 64): ?string
     {

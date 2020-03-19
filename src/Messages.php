@@ -27,9 +27,9 @@ class Messages
      * Translate and format a translation.
      *
      * @param int    $messageCode (Required) The message code to identify the required resource
-     * @param string $language    (Optional) The language code (e. g. en, de, es)
+     * @param string $language    (Optional) The language code (e. g. en, de, es).
      *
-     * @return string
+     * @return string returns the message in the specified language
      */
     public static function get(int $messageCode, string $language = 'en'): string
     {
