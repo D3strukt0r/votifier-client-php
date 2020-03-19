@@ -131,27 +131,40 @@ Run test scripts
 ```bash
 ./vendor/bin/phpunit
 ```
+```bash
+.\vendor\bin\phpunit.bat
+```
 
 ### Coding style tests and fixes
 
 Download PHP CS Fixer from [here](https://cs.symfony.com/download/php-cs-fixer-v2.phar) and rename to `php-cs-fixer`.
 
 ```bash
-php php-cs-fixer fix
+./vendor/bin/php-cs-fixer fix
 ```
+```bash
+.\vendor\bin\php-cs-fixer.bat fix
+```
+
 
 Download PHP_CodeSniffer from [here](https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar) and [here](https://squizlabs.github.io/PHP_CodeSniffer/phpcbf.phar).
 
 To see what mistakes exist in the code run:
 
 ```bash
-php phpcs
+./vendor/bin/phpcs
+```
+```bash
+.\vendor\bin\phpcs.bat
 ```
 
 And to fix it:
 
 ```bash
-php phpcbf
+./vendor/bin/phpcbf
+```
+```bash
+.\vendor\bin\phpcbf.bat
 ```
 
 ### Code documentation
