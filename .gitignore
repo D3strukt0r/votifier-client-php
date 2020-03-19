@@ -172,3 +172,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/macos,phpunit,windows,composer,phpstorm,phpcodesniffer
+
+# Sphinx documentation
+docs/_build/

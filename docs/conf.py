@@ -14,15 +14,11 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
-# Make sure to run "pip install -r requirements.txt" first!
-import sphinx_rtd_theme
-
 # -- Project information -----------------------------------------------------
 
 project = 'votifier-client-php'
 copyright = '2020, Manuele Vaccari'
 author = 'Manuele Vaccari'
-
 
 # -- General configuration ---------------------------------------------------
 
@@ -30,7 +26,6 @@ author = 'Manuele Vaccari'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx_rtd_theme',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -41,6 +36,8 @@ templates_path = ['_templates']
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
+# The master toctree document.
+master_doc = 'index'
 
 # -- Options for HTML output -------------------------------------------------
 
