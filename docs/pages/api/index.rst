@@ -1,8 +1,20 @@
-========
-Overview
-========
+============================
+\\D3strukt0r\\VotifierClient
+============================
+
+**Namespaces**
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
 
-    D3strukt0r/index
+    ServerType/index
+    VoteType/index
+
+**Classes**
+
+.. toctree::
+    :maxdepth: 1
+
+    Messages
+    ServerConnection
+    Vote
