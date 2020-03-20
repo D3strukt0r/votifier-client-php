@@ -33,7 +33,7 @@ class ServerConnection
     /**
      * Creates the ServerConnection object.
      *
-     * @param serverTypeInterface $serverType (Required) The server type information package to connect to
+     * @param ServerTypeInterface $serverType (Required) The server type information package to connect to
      *
      * @throws \Exception
      */

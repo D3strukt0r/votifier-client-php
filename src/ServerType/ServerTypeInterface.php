@@ -44,9 +44,9 @@ interface ServerTypeInterface
     /**
      * Verifies that the connection is correct.
      *
-     * @param string $header (Required) The header that the plugin usually sends
+     * @param string|null $header (Required) The header that the plugin usually sends
      *
-     * @return bool returns true if connections is avilable, otherwise false
+     * @return bool returns true if connections is available, otherwise false
      */
     public function verifyConnection(?string $header): bool;
 

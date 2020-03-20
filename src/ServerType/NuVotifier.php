@@ -75,10 +75,6 @@ class NuVotifier extends ClassicVotifier
 
     /**
      * {@inheritdoc}
-     *
-     * @param string|null $header (Required) The header that the plugin usually sends
-     *
-     * @return bool returns true if connections is avilable, otherwise false
      */
     public function verifyConnection(?string $header): bool
     {
@@ -115,11 +111,6 @@ class NuVotifier extends ClassicVotifier
 
     /**
      * {@inheritdoc}
-     *
-     * @param serverConnection $connection (Required) The connection type to the plugin
-     * @param VoteInterface    $vote       (Required) The vote type package
-     *
-     * @throws \Exception
      */
     public function send(ServerConnection $connection, VoteInterface $vote): void
     {
