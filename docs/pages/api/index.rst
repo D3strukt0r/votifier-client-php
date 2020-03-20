@@ -3,9 +3,6 @@ Overview
 ========
 
 .. toctree::
-   :maxdepth: 2
+    :maxdepth: 2
 
-   Vote
-   VoteType/ClassicVote
-   ServerType/ClassicVotifier
-   ServerType/NuVotifier
+    D3strukt0r/index
