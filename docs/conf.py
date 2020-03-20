@@ -26,6 +26,7 @@ author = 'Manuele Vaccari'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinxcontrib.phpdomain'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -38,6 +39,9 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 # The master toctree document.
 master_doc = 'index'
+
+# The name of the default domain.
+primary_domain = 'php'
 
 # -- Options for HTML output -------------------------------------------------
 
