@@ -1,6 +1,8 @@
-======================================
-\\D3strukt0r\\VotifierClient\\VoteType
-======================================
+**\\D3strukt0r\\VotifierClient**
+
+==========
+VoteType\\
+==========
 
 **Interfaces**
 
