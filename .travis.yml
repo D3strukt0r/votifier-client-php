@@ -21,6 +21,10 @@ cache:
 #      - oracle-java8-set-default
 
 install:
+  # https://github.com/php-coveralls/php-coveralls
+  - curl -fsSL https://github.com/php-coveralls/php-coveralls/releases/download/v2.2.0/php-coveralls.phar
+  # https://scrutinizer-ci.com/docs/tools/external-code-coverage/
+  - curl -fsSL https://scrutinizer-ci.com/ocular.phar
   - composer install
 #  - |
 #    if [ ! -f "$HOME/mc-server/spigot-1.12.2.jar" ]; then
@@ -43,15 +47,8 @@ script:
   - ./vendor/bin/php-cs-fixer fix --diff --dry-run -v
 
 after_script:
-  # https://github.com/php-coveralls/php-coveralls
-  # https://scrutinizer-ci.com/docs/tools/external-code-coverage/
   - |
     if [[ "$TRAVIS_PHP_VERSION" == "7.4" && -f "build/logs/clover.xml" ]]; then
-      curl -fsSL -o /usr/local/bin/php-coveralls https://github.com/php-coveralls/php-coveralls/releases/download/v2.2.0/php-coveralls.phar
-      chmod +x /usr/local/bin/php-coveralls
-      php-coveralls -v
-
-      curl -fsSL -o /usr/local/bin/ocular https://scrutinizer-ci.com/ocular.phar
-      chmod +x /usr/local/bin/ocular
-      ocular code-coverage:upload --format=php-clover build/logs/clover.xml
+      php php-coveralls.phar -v
+      php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml
     fi
