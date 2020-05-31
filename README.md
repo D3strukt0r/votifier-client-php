@@ -23,7 +23,7 @@ This php script allows easy using of the Bukkit plugin Votifier
 [license]: https://github.com/D3strukt0r/votifier-client-php/blob/master/LICENSE.txt
 [packagist]: https://packagist.org/packages/d3strukt0r/votifier-client
 [travis]: https://travis-ci.com/D3strukt0r/votifier-client-php
-[coveralls]: https://coveralls.io/github/D3strukt0r/Votifier-PHP-Client
+[coveralls]: https://coveralls.io/github/D3strukt0r/votifier-client-php
 [scrutinizer]: https://scrutinizer-ci.com/g/D3strukt0r/votifier-client-php/
 [sensiolabs]: https://insight.symfony.com/projects/6056fd3d-1c44-4fa9-981d-c99ba2192c0f
 [rtfd]: https://readthedocs.org/projects/votifier-client-php/
@@ -35,8 +35,8 @@ This php script allows easy using of the Bukkit plugin Votifier
 [php-icon]: https://img.shields.io/packagist/php-v/d3strukt0r/votifier-client
 [travis-master-icon]: https://img.shields.io/travis/com/D3strukt0r/votifier-client-php/master
 [travis-develop-icon]: https://img.shields.io/travis/com/D3strukt0r/votifier-client-php/develop
-[coveralls-master-icon]: https://img.shields.io/coveralls/github/D3strukt0r/Votifier-PHP-Client/master
-[coveralls-develop-icon]: https://img.shields.io/coveralls/github/D3strukt0r/Votifier-PHP-Client/develop
+[coveralls-master-icon]: https://img.shields.io/coveralls/github/D3strukt0r/votifier-client-php/master
+[coveralls-develop-icon]: https://img.shields.io/coveralls/github/D3strukt0r/votifier-client-php/develop
 [scrutinizer-master-icon]: https://img.shields.io/scrutinizer/quality/g/D3strukt0r/votifier-client-php/master
 [scrutinizer-develop-icon]: https://img.shields.io/scrutinizer/quality/g/D3strukt0r/votifier-client-php/develop
 [insight-icon]: https://insight.symfony.com/projects/6056fd3d-1c44-4fa9-981d-c99ba2192c0f/mini.svg
