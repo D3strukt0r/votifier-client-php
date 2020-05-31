@@ -12,7 +12,6 @@
 
 namespace D3strukt0r\VotifierClient\ServerType;
 
-use D3strukt0r\VotifierClient\VoteType\ClassicVote;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -21,7 +20,7 @@ use PHPUnit\Framework\TestCase;
  */
 final class ClassicVotifierTest extends TestCase
 {
-    /** @var \D3strukt0r\VotifierClient\ServerType\ClassicVotifier */
+    /** @var ClassicVotifier */
     private $obj;
 
     private $key = 'MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAuyi7TXsufptucSYoVgZLonqFxtYvK0uJoxpExE+hcXRz3tR9jbXxtJ'.

@@ -20,7 +20,7 @@ use PHPUnit\Framework\TestCase;
  */
 final class MessagesTest extends TestCase
 {
-    /** @var \D3strukt0r\VotifierClient\Vote */
+    /** @var Vote */
     private $obj;
 
     public function testValidTranslation(): void

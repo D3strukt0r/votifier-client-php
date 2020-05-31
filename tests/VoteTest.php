@@ -22,7 +22,7 @@ use PHPUnit\Framework\TestCase;
  */
 final class VoteTest extends TestCase
 {
-    /** @var \D3strukt0r\VotifierClient\Vote */
+    /** @var Vote */
     private $obj;
 
     protected function setUp(): void

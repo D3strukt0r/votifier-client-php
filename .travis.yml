@@ -37,12 +37,14 @@ install:
 
 script:
   #  - VOTIFIER_KEY=$(cat $HOME/mc-server/plugins/Votifier/rsa/public.key); ./phpunit
-  - composer run-script check
-  - composer run-script test
+  - ./vendor/bin/phpunit
+  - ./vendor/bin/phpcs
+  # this checks that the source code follows the Symfony Code Syntax rules
+  - ./vendor/bin/php-cs-fixer fix --diff --dry-run -v
 
 after_script:
   - |
-    if [ -f "build/logs/clover.xml" ]; then
+    if [[ -f "build/logs/clover.xml" ]]; then
       ./vendor/bin/php-coveralls -v
       ./vendor/bin/ocular code-coverage:upload --format=php-clover build/logs/clover.xml
     fi

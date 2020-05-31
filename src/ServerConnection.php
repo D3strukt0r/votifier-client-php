@@ -35,7 +35,7 @@ class ServerConnection
      *
      * @param ServerTypeInterface $serverType (Required) The server type information package to connect to
      *
-     * @throws \Exception
+     * @throws Exception
      */
     public function __construct(ServerTypeInterface $serverType)
     {

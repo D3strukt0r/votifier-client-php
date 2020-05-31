@@ -20,7 +20,7 @@ use PHPUnit\Framework\TestCase;
  */
 final class ClassicVoteTest extends TestCase
 {
-    /** @var \D3strukt0r\VotifierClient\VoteType\ClassicVote */
+    /** @var ClassicVote */
     private $obj;
 
     protected function setUp(): void
