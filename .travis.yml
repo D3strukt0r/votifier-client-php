@@ -22,9 +22,9 @@ cache:
 
 install:
   # https://github.com/php-coveralls/php-coveralls
-  - curl -fsSL https://github.com/php-coveralls/php-coveralls/releases/download/v2.2.0/php-coveralls.phar
+  - wget https://github.com/php-coveralls/php-coveralls/releases/latest/download/php-coveralls.phar
   # https://scrutinizer-ci.com/docs/tools/external-code-coverage/
-  - curl -fsSL https://scrutinizer-ci.com/ocular.phar
+  - wget https://scrutinizer-ci.com/ocular.phar
   - composer install
 #  - |
 #    if [ ! -f "$HOME/mc-server/spigot-1.12.2.jar" ]; then
