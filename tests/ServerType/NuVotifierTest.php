@@ -16,8 +16,11 @@ use D3strukt0r\VotifierClient\VoteType\ClassicVote;
 use PHPUnit\Framework\TestCase;
 
 /**
+ * Class NuVotifierTest.
+ *
+ * @covers \D3strukt0r\VotifierClient\ServerType\NuVotifier
+ *
  * @internal
- * @coversNothing
  */
 final class NuVotifierTest extends TestCase
 {

@@ -40,9 +40,9 @@ class ServerConnection
     public function __construct(ServerTypeInterface $serverType)
     {
         $this->serverType = $serverType;
-        $s = fsockopen($serverType->getHost(), $serverType->getPort(), $errno, $errstr, 3);
+        $s = fsockopen($serverType->getHost(), $serverType->getPort(), $errorNumber, $errorString, 3);
         if (false === $s) {
-            throw new Exception($errstr, $errno);
+            throw new Exception($errorString, $errorNumber);
         }
         $this->s = $s;
     }

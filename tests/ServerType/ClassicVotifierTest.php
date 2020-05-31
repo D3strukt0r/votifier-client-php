@@ -15,8 +15,11 @@ namespace D3strukt0r\VotifierClient\ServerType;
 use PHPUnit\Framework\TestCase;
 
 /**
+ * Class ClassicVotifierTest.
+ *
+ * @covers \D3strukt0r\VotifierClient\ServerType\ClassicVotifier
+ *
  * @internal
- * @coversNothing
  */
 final class ClassicVotifierTest extends TestCase
 {

@@ -15,8 +15,11 @@ namespace D3strukt0r\VotifierClient;
 use PHPUnit\Framework\TestCase;
 
 /**
+ * Class MessagesTest.
+ *
+ * @covers \D3strukt0r\VotifierClient\Messages
+ *
  * @internal
- * @coversNothing
  */
 final class MessagesTest extends TestCase
 {

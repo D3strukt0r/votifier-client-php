@@ -44,7 +44,7 @@ script:
 
 after_script:
   - |
-    if [[ -f "build/logs/clover.xml" ]]; then
+    if [[ "$TRAVIS_PHP_VERSION" == "7.4" && -f "build/logs/clover.xml" ]]; then
       ./vendor/bin/php-coveralls -v
       ./vendor/bin/ocular code-coverage:upload --format=php-clover build/logs/clover.xml
     fi
