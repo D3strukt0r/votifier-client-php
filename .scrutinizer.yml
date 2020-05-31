@@ -8,7 +8,7 @@ build:
           # https://scrutinizer-ci.com/docs/tools/php/php-scrutinizer
           - php-scrutinizer-run
           # https://scrutinizer-ci.com/docs/tools/php/code-sniffer/
-          - phpcs-run
+          - phpcs-run --standard=.phpcs.xml
 
   # https://scrutinizer-ci.com/docs/build/languages#php
   environment:
