@@ -57,11 +57,11 @@ jobs:
 
       # https://github.com/php-coveralls/php-coveralls
       - name: Setup Coveralls
-        if: github.event_name == 'push' && steps.check-if-clover-exists.outcome == 'success'
+        if: github.event_name == 'push' && steps.check-if-clover-exists.outcome == 'success' && matrix.php == '7.4'
         run: wget https://github.com/php-coveralls/php-coveralls/releases/latest/download/php-coveralls.phar
 
       - name: Upload coverage report to Coveralls
-        if: github.event_name == 'push' && steps.check-if-clover-exists.outcome == 'success'
+        if: github.event_name == 'push' && steps.check-if-clover-exists.outcome == 'success' && matrix.php == '7.4'
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
         run: php php-coveralls.phar -v
@@ -69,10 +69,10 @@ jobs:
       # https://scrutinizer-ci.com/docs/tools/external-code-coverage/
       # https://github.com/scrutinizer-ci/ocular
       - name: Setup Ocular (Scrutinizer)
-        if: github.event_name == 'push' && steps.check-if-clover-exists.outcome == 'success'
+        if: github.event_name == 'push' && steps.check-if-clover-exists.outcome == 'success' && matrix.php == '7.4'
         run: wget https://scrutinizer-ci.com/ocular.phar
 
       - name: Upload coverage report to (Scrutinizer)
-        if: github.event_name == 'push' && steps.check-if-clover-exists.outcome == 'success'
+        if: github.event_name == 'push' && steps.check-if-clover-exists.outcome == 'success' && matrix.php == '7.4'
         # run: php ocular.phar code-coverage:upload --repository=g/D3strukt0r/votifier-client-php --revision=$(git rev-parse HEAD) --format=php-clover build/logs/clover.xml
         run: php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml
