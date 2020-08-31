@@ -22,9 +22,31 @@ jobs:
           - 7.3
           - 7.4
 
+    name: Test on PHP v${{ matrix.php }}
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '${{ matrix.php }}'
+          coverage: xdebug
+
+      - name: Setup problem matchers for PHP
+        run: echo "::add-matcher::${{ runner.tool_cache }}/php.json"
+
+      - name: Setup problem matchers for PHPUnit
+        run: echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
+
+      - name: Setup Composer
+        run: composer self-update
+
+      - name: Check versions
+        run: |
+          php -v
+          composer -v
 
       # https://github.com/actions/cache/blob/main/examples.md#php---composer
       - name: Get Composer Cache Directory
@@ -34,7 +56,7 @@ jobs:
         id: composer-cache # use this to check for `cache-hit` (`steps.composer-cache.outputs.cache-hit != 'true'`)
         with:
           path: ${{ steps.composer-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.json') }}
           restore-keys: |
             ${{ runner.os }}-composer-
 
@@ -51,6 +73,7 @@ jobs:
         run: ./vendor/bin/php-cs-fixer fix --diff --dry-run -v
 
       - name: Check if clover report exists
+        if: github.event_name == 'push' && matrix.php == '7.4'
         id: check-if-clover-exists
         continue-on-error: true
         run: test -f build/logs/clover.xml
@@ -72,7 +95,7 @@ jobs:
         if: github.event_name == 'push' && steps.check-if-clover-exists.outcome == 'success' && matrix.php == '7.4'
         run: wget https://scrutinizer-ci.com/ocular.phar
 
-      - name: Upload coverage report to (Scrutinizer)
+      - name: Upload coverage report to Scrutinizer
         if: github.event_name == 'push' && steps.check-if-clover-exists.outcome == 'success' && matrix.php == '7.4'
         # run: php ocular.phar code-coverage:upload --repository=g/D3strukt0r/votifier-client-php --revision=$(git rev-parse HEAD) --format=php-clover build/logs/clover.xml
         run: php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml
