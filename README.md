@@ -4,52 +4,45 @@ This php script allows easy using of the Bukkit plugin Votifier
 
 **Project**
 
-| [License][license]       | Versions ([Packagist][packagist])                                                                       | Downloads ([Packagist][packagist])        | Required PHP Version              |
-|--------------------------|---------------------------------------------------------------------------------------------------------|-------------------------------------------|-----------------------------------|
-| ![License][license-icon] | Release: ![Version][release-icon]<br>Pre-Release: ![Version (including pre-releases)][pre-release-icon] | ![Downloads on Packagist][downloads-icon] | ![Required PHP version][php-icon] |
+[![License](https://img.shields.io/packagist/l/d3strukt0r/votifier-client)][license]
+[![Version](https://img.shields.io/packagist/v/d3strukt0r/votifier-client?label=latest%20release)][packagist]
+[![Version (including pre-releases)](https://img.shields.io/packagist/v/D3strukt0r/votifier-client?include_prereleases&label=latest%20pre-release)][packagist]
+[![Downloads on Packagist](https://img.shields.io/packagist/dt/d3strukt0r/votifier-client)][packagist]
+[![Required PHP version](https://img.shields.io/packagist/php-v/d3strukt0r/votifier-client)][packagist]
 
 **master**-branch (alias stable, latest)
 
-| [Travis CI][travis]                        | [Coveralls][coveralls]              | [Scrutinizer CI][scrutinizer]                                                                                   | [SensioLabs][sensiolabs]        | [Read the Docs][rtfd]                  |
-|--------------------------------------------|-------------------------------------|-----------------------------------------------------------------------------------------------------------------|---------------------------------|----------------------------------------|
-| ![Travis build status][travis-master-icon] | ![Coveralls][coveralls-master-icon] | ![Scrutinizer build status][scrutinizer-master-icon]<br>![Scrutinizer code quality][scrutinizer-cc-master-icon] | ![SymfonyInsight][insight-icon] | ![Docs build status][rtfd-master-icon] |
+[![GH Action CI/CD](https://github.com/D3strukt0r/votifier-client-php/workflows/CI/CD/badge.svg?branch=master)][gh-action]
+[![Coveralls](https://img.shields.io/coveralls/github/D3strukt0r/votifier-client-php/master)][coveralls]
+[![Scrutinizer build status](https://img.shields.io/scrutinizer/build/g/D3strukt0r/votifier-client-php/master?label=scrutinizer%20build)][scrutinizer]
+[![Scrutinizer code quality](https://img.shields.io/scrutinizer/quality/g/D3strukt0r/votifier-client-php/master)][scrutinizer]
+[![SymfonyInsight](https://insight.symfony.com/projects/6056fd3d-1c44-4fa9-981d-c99ba2192c0f/mini.svg)][sensiolabs]
+[![Docs build status](https://img.shields.io/readthedocs/votifier-client-php/stable)][rtfd]
 
 **develop**-branch (alias nightly)
 
-| [Travis CI][travis]                         | [Coveralls][coveralls]               | [Scrutinizer CI][scrutinizer]                                                                                     | [Read the Docs][rtfd]                   |
-|---------------------------------------------|--------------------------------------|-------------------------------------------------------------------------------------------------------------------|-----------------------------------------|
-| ![Travis build status][travis-develop-icon] | ![Coveralls][coveralls-develop-icon] | ![Scrutinizer build status][scrutinizer-develop-icon]<br>![Scrutinizer code quality][scrutinizer-cc-develop-icon] | ![Docs build status][rtfd-develop-icon] |
+[![GH Action CI/CD](https://github.com/D3strukt0r/votifier-client-php/workflows/CI/CD/badge.svg?branch=develop)][gh-action]
+[![Coveralls](https://img.shields.io/coveralls/github/D3strukt0r/votifier-client-php/develop)][coveralls]
+[![Scrutinizer build status](https://img.shields.io/scrutinizer/build/g/D3strukt0r/votifier-client-php/develop?label=scrutinizer%20build)][scrutinizer]
+[![Scrutinizer code quality](https://img.shields.io/scrutinizer/quality/g/D3strukt0r/votifier-client-php/develop)][scrutinizer]
+[![Docs build status](https://img.shields.io/readthedocs/votifier-client-php/latest)][rtfd]
 
 [license]: https://github.com/D3strukt0r/votifier-client-php/blob/master/LICENSE.txt
 [packagist]: https://packagist.org/packages/d3strukt0r/votifier-client
-[travis]: https://travis-ci.com/D3strukt0r/votifier-client-php
+[gh-action]: https://github.com/D3strukt0r/votifier-client-php/actions
 [coveralls]: https://coveralls.io/github/D3strukt0r/votifier-client-php
 [scrutinizer]: https://scrutinizer-ci.com/g/D3strukt0r/votifier-client-php/
 [sensiolabs]: https://insight.symfony.com/projects/6056fd3d-1c44-4fa9-981d-c99ba2192c0f
 [rtfd]: https://readthedocs.org/projects/votifier-client-php/
 
-[license-icon]: https://img.shields.io/packagist/l/d3strukt0r/votifier-client
-[release-icon]: https://img.shields.io/packagist/v/d3strukt0r/votifier-client
-[pre-release-icon]: https://img.shields.io/packagist/v/d3strukt0r/votifier-client?include_prereleases
-[downloads-icon]: https://img.shields.io/packagist/dt/d3strukt0r/votifier-client
-[php-icon]: https://img.shields.io/packagist/php-v/d3strukt0r/votifier-client
-[travis-master-icon]: https://img.shields.io/travis/com/D3strukt0r/votifier-client-php/master
-[travis-develop-icon]: https://img.shields.io/travis/com/D3strukt0r/votifier-client-php/develop
-[coveralls-master-icon]: https://img.shields.io/coveralls/github/D3strukt0r/votifier-client-php/master
-[coveralls-develop-icon]: https://img.shields.io/coveralls/github/D3strukt0r/votifier-client-php/develop
-[scrutinizer-master-icon]: https://img.shields.io/scrutinizer/build/g/D3strukt0r/votifier-client-php/master
-[scrutinizer-develop-icon]: https://img.shields.io/scrutinizer/build/g/D3strukt0r/votifier-client-php/develop
-[scrutinizer-cc-master-icon]: https://img.shields.io/scrutinizer/quality/g/D3strukt0r/votifier-client-php/master
-[scrutinizer-cc-develop-icon]: https://img.shields.io/scrutinizer/quality/g/D3strukt0r/votifier-client-php/develop
-[insight-icon]: https://insight.symfony.com/projects/6056fd3d-1c44-4fa9-981d-c99ba2192c0f/mini.svg
-[rtfd-master-icon]: https://img.shields.io/readthedocs/votifier-client-php/stable
-[rtfd-develop-icon]: https://img.shields.io/readthedocs/votifier-client-php/latest
-
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your
+local machine for development and testing purposes. See deployment for notes on
+how to deploy the project on a live system.
 
-The full documentation can be found on https://votifier-client-php-docs.manuele-vaccari.ch/
+The full documentation can be found on
+https://votifier-client-php-docs.manuele-vaccari.ch/
 
 ### Prerequisites
 
@@ -69,7 +62,7 @@ composer require d3strukt0r/votifier-client
 
 Simply create an object with all information
 
-(For the servers with the classic Votifier plugins)
+For the servers with the classic Votifier plugins:
 ```php
 <?php
 
@@ -82,7 +75,7 @@ $voteType = new ClassicVote($_GET['username'], 'Your vote list', $_SERVER['REMOT
 $vote = new Vote($voteType, $serverType);
 ```
 
-(For the servers which use the NuVotifier plugin (v1 protocol) (HINT: It's EXACTLY the same as method 1))
+For the servers which use the NuVotifier plugin (v1 protocol) (HINT: It's EXACTLY the same as method 1):
 ```php
 <?php
 
@@ -95,7 +88,7 @@ $voteType = new ClassicVote($_GET['username'], 'Your vote list', $_SERVER['REMOT
 $vote = new Vote($voteType, $serverType);
 ```
 
-(For the servers which use the NuVotifier plugin with v2 protocol)
+For the servers which use the NuVotifier plugin with v2 protocol:
 ```php
 <?php
 
@@ -131,30 +124,32 @@ Run test scripts
 ```bash
 ./vendor/bin/phpunit
 ```
-```bash
+```powershell
 .\vendor\bin\phpunit.bat
 ```
 
 ### Coding style tests and fixes
 
-Download PHP CS Fixer from [here](https://cs.symfony.com/download/php-cs-fixer-v2.phar) and rename to `php-cs-fixer`.
+This libary already comes with `php-cs-fixer` but you can also download it from
+[here](https://cs.symfony.com/download/php-cs-fixer-v2.phar) and rename to `php-cs-fixer`.
 
 ```bash
 ./vendor/bin/php-cs-fixer fix
 ```
-```bash
+```powershell
 .\vendor\bin\php-cs-fixer.bat fix
 ```
 
-
-Download PHP_CodeSniffer from [here](https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar) and [here](https://squizlabs.github.io/PHP_CodeSniffer/phpcbf.phar).
+This libary already comes with PHP_CodeSniffer but you can also download it from
+[here](https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar) and
+[here](https://squizlabs.github.io/PHP_CodeSniffer/phpcbf.phar).
 
 To see what mistakes exist in the code run:
 
 ```bash
 ./vendor/bin/phpcs
 ```
-```bash
+```powershell
 .\vendor\bin\phpcs.bat
 ```
 
@@ -163,16 +158,24 @@ And to fix it:
 ```bash
 ./vendor/bin/phpcbf
 ```
-```bash
+```powershell
 .\vendor\bin\phpcbf.bat
 ```
 
 ### Code documentation
 
-Download `phpDocumentor.phar` from [here](http://phpdoc.org/phpDocumentor.phar) and rename to `phpdoc`.
+Install Python v3 from [here](https://www.python.org/downloads/).
 
+Install `Sphinx` as documented [here](https://www.sphinx-doc.org/en/master/usage/installation.html).
 ```bash
-php phpdoc -d ./src -t ./docs/api
+pip install -U sphinx
+```
+
+To build the docs:
+```bash
+cd docs
+pip install -r requirements.txt
+make html
 ```
 
 ## Built With
@@ -180,7 +183,7 @@ php phpdoc -d ./src -t ./docs/api
 * [PHP](https://www.php.net/) - Programming Language
 * [Composer](https://getcomposer.org/) - Dependency Management
 * [PHPUnit](https://phpunit.de/) - Testing the code
-* [Travis CI](https://travis-ci.com/) - Automatic CI (Testing)
+* [Github Actions](https://github.com/features/actions) - Automatic CI (Testing)
 
 ## Contributing
 
