@@ -48,12 +48,13 @@ https://votifier-client-php-docs.manuele-vaccari.ch/
 
 What things you need to install the software and how to install them
 
-* PHP Project (PHP 7.1+)
-* Minecraft server with the Votifier plugin
+-   PHP Project (PHP 7.1+)
+-   Minecraft server with the Votifier plugin
 
 ### Installing
 
 Add the client using [Composer](http://getcomposer.org/).
+
 ```bash
 composer require d3strukt0r/votifier-client
 ```
@@ -63,6 +64,7 @@ composer require d3strukt0r/votifier-client
 Simply create an object with all information
 
 For the servers with the classic Votifier plugins:
+
 ```php
 <?php
 
@@ -76,6 +78,7 @@ $vote = new Vote($voteType, $serverType);
 ```
 
 For the servers which use the NuVotifier plugin (v1 protocol) (HINT: It's EXACTLY the same as method 1):
+
 ```php
 <?php
 
@@ -89,6 +92,7 @@ $vote = new Vote($voteType, $serverType);
 ```
 
 For the servers which use the NuVotifier plugin with v2 protocol:
+
 ```php
 <?php
 
@@ -102,6 +106,7 @@ $vote = new Vote($voteType, $serverType);
 ```
 
 Finally, just send it.
+
 ```php
 <?php
 
@@ -121,9 +126,10 @@ Explain how to run the automated tests for this system
 
 Run test scripts
 
-```bash
+```shell
 ./vendor/bin/phpunit
 ```
+
 ```powershell
 .\vendor\bin\phpunit.bat
 ```
@@ -133,9 +139,10 @@ Run test scripts
 This libary already comes with `php-cs-fixer` but you can also download it from
 [here](https://cs.symfony.com/download/php-cs-fixer-v2.phar) and rename to `php-cs-fixer`.
 
-```bash
+```shell
 ./vendor/bin/php-cs-fixer fix
 ```
+
 ```powershell
 .\vendor\bin\php-cs-fixer.bat fix
 ```
@@ -146,18 +153,20 @@ This libary already comes with PHP_CodeSniffer but you can also download it from
 
 To see what mistakes exist in the code run:
 
-```bash
+```shell
 ./vendor/bin/phpcs
 ```
+
 ```powershell
 .\vendor\bin\phpcs.bat
 ```
 
 And to fix it:
 
-```bash
+```shell
 ./vendor/bin/phpcbf
 ```
+
 ```powershell
 .\vendor\bin\phpcbf.bat
 ```
@@ -167,12 +176,14 @@ And to fix it:
 Install Python v3 from [here](https://www.python.org/downloads/).
 
 Install `Sphinx` as documented [here](https://www.sphinx-doc.org/en/master/usage/installation.html).
-```bash
+
+```shell
 pip install -U sphinx
 ```
 
 To build the docs:
-```bash
+
+```shell
 cd docs
 pip install -r requirements.txt
 make html
@@ -180,10 +191,10 @@ make html
 
 ## Built With
 
-* [PHP](https://www.php.net/) - Programming Language
-* [Composer](https://getcomposer.org/) - Dependency Management
-* [PHPUnit](https://phpunit.de/) - Testing the code
-* [Github Actions](https://github.com/features/actions) - Automatic CI (Testing)
+-   [PHP](https://www.php.net/) - Programming Language
+-   [Composer](https://getcomposer.org/) - Dependency Management
+-   [PHPUnit](https://phpunit.de/) - Testing the code
+-   [Github Actions](https://github.com/features/actions) - Automatic CI (Testing)
 
 ## Contributing
 
@@ -191,11 +202,11 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/D3strukt0r/votifier-client-php/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/D3strukt0r/votifier-client-php/tags).
 
 ## Authors
 
-* **Manuele Vaccari** - [D3strukt0r](https://github.com/D3strukt0r) - *Initial work*
+-   **Manuele Vaccari** - [D3strukt0r](https://github.com/D3strukt0r) - _Initial work_
 
 See also the list of [contributors](https://github.com/D3strukt0r/votifier-client-php/contributors) who participated in this project.
 
@@ -205,6 +216,6 @@ This project is licensed under the GNU General Public License v3.0 - see the [LI
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+-   Hat tip to anyone whose code was used
+-   Inspiration
+-   etc
