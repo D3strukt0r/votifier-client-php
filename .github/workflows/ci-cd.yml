@@ -49,11 +49,6 @@ jobs:
           php-version: "${{ matrix.php }}"
           coverage: xdebug
 
-      # REMOVE LATER ON
-      - name: Get all matchers
-        run: ls -Al ${{ runner.tool_cache }}
-      # REMOVE LATER ON
-
       - name: Setup problem matchers for PHP
         run: echo "::add-matcher::${{ runner.tool_cache }}/php.json"
 
