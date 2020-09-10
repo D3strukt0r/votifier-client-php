@@ -26,14 +26,14 @@ develop-branch (alias nightly)
 [![Coveralls](https://img.shields.io/coveralls/github/D3strukt0r/votifier-client-php/develop)][coveralls]
 [![Scrutinizer build status](https://img.shields.io/scrutinizer/build/g/D3strukt0r/votifier-client-php/develop?label=scrutinizer%20build)][scrutinizer]
 [![Scrutinizer code quality](https://img.shields.io/scrutinizer/quality/g/D3strukt0r/votifier-client-php/develop?label=scrutinizer%20code%20quality)][scrutinizer]
-[![Codacy grade](https://img.shields.io/codacy/grade/d97c7e16f5d24924b39f9776eeb02259/master?label=codacy%20code%20quality)][codacy]
+[![Codacy grade](https://img.shields.io/codacy/grade/d97c7e16f5d24924b39f9776eeb02259/develop?label=codacy%20code%20quality)][codacy]
 [![Docs build status](https://img.shields.io/readthedocs/votifier-client-php/latest)][rtfd]
 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-The full documentation can be found on [https://votifier-client-php-docs.manuele-vaccari.ch]
+The full documentation can be found on [here](https://votifier-client-php-docs.manuele-vaccari.ch)
 
 ### Prerequisites
 
