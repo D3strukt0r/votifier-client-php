@@ -20,6 +20,8 @@ use PHPUnit\Framework\TestCase;
 
 use function file_get_contents;
 
+use const DIRECTORY_SEPARATOR;
+
 /**
  * Class ClassicVotifierTest.
  *
@@ -36,7 +38,7 @@ final class ClassicVotifierTest extends TestCase
 
     protected function setUp(): void
     {
-        $key = file_get_contents('tests/ServerType/votifier_public.key');
+        $key = file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . 'votifier_public.key');
         $this->object = (new ClassicVotifier())
             ->setHost('mock_host')
             ->setPort(0)
@@ -54,6 +56,9 @@ final class ClassicVotifierTest extends TestCase
         $this->assertInstanceOf('D3strukt0r\VotifierClient\ServerType\ClassicVotifier', $this->object);
     }
 
+    /**
+     * @requires PHPUnit >= 8
+     */
     public function testNotVotifierException(): void
     {
         $stubServerConnection = $this->createStub(ServerConnection::class);
@@ -68,6 +73,9 @@ final class ClassicVotifierTest extends TestCase
         $this->object->send($stubServerConnection, $stubVote);
     }
 
+    /**
+     * @requires PHPUnit >= 8
+     */
     public function testPackageNotSentException(): void
     {
         $stubServerConnection = $this->createStub(ServerConnection::class);
@@ -86,6 +94,9 @@ final class ClassicVotifierTest extends TestCase
         $this->object->send($stubServerConnection, $stubVote);
     }
 
+    /**
+     * @requires PHPUnit >= 8
+     */
     public function testSend(): void
     {
         $stubServerConnection = $this->createStub(ServerConnection::class);
