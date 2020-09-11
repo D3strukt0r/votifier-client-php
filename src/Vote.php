@@ -14,6 +14,7 @@ namespace D3strukt0r\VotifierClient;
 
 use D3strukt0r\VotifierClient\ServerType\ServerTypeInterface;
 use D3strukt0r\VotifierClient\VoteType\VoteInterface;
+use DateTime;
 use Exception;
 
 /**
@@ -32,27 +33,64 @@ class Vote
     private $server;
 
     /**
-     * Created a Vote object.
+     * Gets the vote.
      *
-     * @param VoteInterface       $vote       (Required) The vote package
-     * @param serverTypeInterface $serverType (Required) The server type information package
+     * @return VoteInterface return the vote
      */
-    public function __construct(VoteInterface $vote, ServerTypeInterface $serverType)
+    public function getVote(): VoteInterface
     {
-        $this->vote = $vote;
-        $this->server = $serverType;
+        return $this->vote;
     }
 
     /**
-     * Sends the vote package to the server.
+     * Sets the vote.
+     *
+     * @param VoteInterface $vote The vote
+     *
+     * @return $this returns the class itself, for doing multiple things at once
+     */
+    public function setVote(VoteInterface $vote): self
+    {
+        $this->vote = $vote;
+
+        return $this;
+    }
+
+    /**
+     * Gets the server type.
+     *
+     * @return ServerTypeInterface returns the server type
+     */
+    public function getServerType(): ServerTypeInterface
+    {
+        return $this->server;
+    }
+
+    /**
+     * Sets the server type.
+     *
+     * @param ServerTypeInterface $server The server type
+     *
+     * @return $this returns the class itself, for doing multiple things at once
+     */
+    public function setServerType(ServerTypeInterface $server): self
+    {
+        $this->server = $server;
+
+        return $this;
+    }
+
+    /**
+     * @param DateTime|null $timestamp [optional] A timestamp
      *
      * @throws Exception
      */
-    public function send(): void
+    public function send(DateTime $timestamp = null): void
     {
         $con = new ServerConnection($this->server);
 
-        $this->vote->setTimestamp();
+        $timestamp = $timestamp ?: new DateTime();
+        $this->vote->setTimestamp($timestamp);
         $this->server->send($con, $this->vote);
     }
 }

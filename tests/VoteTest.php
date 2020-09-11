@@ -14,6 +14,7 @@ namespace D3strukt0r\VotifierClient;
 
 use D3strukt0r\VotifierClient\ServerType\ClassicVotifier;
 use D3strukt0r\VotifierClient\VoteType\ClassicVote;
+use DateTime;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -25,15 +26,23 @@ use PHPUnit\Framework\TestCase;
  */
 final class VoteTest extends TestCase
 {
-    /** @var Vote */
+    /**
+     * @var Vote The main object
+     */
     private $object;
 
+    /**
+     * @requires PHPUnit >= 8
+     */
     protected function setUp(): void
     {
-        $this->object = new Vote(
-            new ClassicVote('mock_user', 'mock_service', 'mock_address'),
-            new ClassicVotifier('mock_host', 00000, 'mock_key')
-        );
+        $stubServerType = $this->createStub(ClassicVotifier::class);
+        $stubServerType->method('send');
+
+        $this->object = (new Vote())
+            ->setServerType($stubServerType)
+            ->setVote(new ClassicVote('mock_user', 'mock_service', 'mock_address'))
+        ;
     }
 
     protected function tearDown(): void
@@ -46,8 +55,22 @@ final class VoteTest extends TestCase
         $this->assertInstanceOf('D3strukt0r\VotifierClient\Vote', $this->object);
     }
 
-    /*public function testValidResult()
+    public function testConstruct(): void
     {
-        $this->assertTrue($this->obj->send());
-    }*/
+        $stubServerType = $this->createStub(ClassicVotifier::class);
+        $stubServerType->method('send');
+
+        $stubVote = $this->createStub(ClassicVote::class);
+
+        $testObject = (new Vote())->setServerType($stubServerType)->setVote($stubVote);
+        $this->assertSame($stubServerType, $testObject->getServerType());
+        $this->assertSame($stubVote, $testObject->getVote());
+    }
+
+    public function testSend(): void
+    {
+        $timestamp = new DateTime();
+        $this->assertNull($this->object->send($timestamp));
+        $this->assertSame($timestamp->getTimestamp(), $this->object->getVote()->getTimestamp());
+    }
 }
