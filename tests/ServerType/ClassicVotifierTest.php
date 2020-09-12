@@ -26,6 +26,8 @@ use const DIRECTORY_SEPARATOR;
 /**
  * Class ClassicVotifierTest.
  *
+ * @requires PHPUnit >= 8
+ *
  * @covers \D3strukt0r\VotifierClient\ServerType\ClassicVotifier
  *
  * @internal
@@ -77,9 +79,6 @@ final class ClassicVotifierTest extends TestCase
         $this->classicVotifier->sendVote($voteStub);
     }
 
-    /**
-     * @requires PHPUnit >= 8
-     */
     public function testNotVotifierException(): void
     {
         $this->socketStub
@@ -93,9 +92,6 @@ final class ClassicVotifierTest extends TestCase
         $this->classicVotifier->sendVote($voteStub);
     }
 
-    /**
-     * @requires PHPUnit >= 8
-     */
     public function testPackageNotSentException(): void
     {
         $this->socketStub
@@ -113,9 +109,6 @@ final class ClassicVotifierTest extends TestCase
         $this->classicVotifier->sendVote($voteStub);
     }
 
-    /**
-     * @requires PHPUnit >= 8
-     */
     public function testSend(): void
     {
         $this->socketStub

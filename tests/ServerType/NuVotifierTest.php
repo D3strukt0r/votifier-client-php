@@ -31,6 +31,8 @@ use const DIRECTORY_SEPARATOR;
 /**
  * Class NuVotifierTest.
  *
+ * @requires PHPUnit >= 8
+ *
  * @covers \D3strukt0r\VotifierClient\ServerType\NuVotifier
  *
  * @internal
@@ -95,9 +97,6 @@ final class NuVotifierTest extends TestCase
         $this->assertSame('mock_token', $this->nuvotifier->getToken());
     }
 
-    /**
-     * @requires PHPUnit >= 8
-     */
     public function testSendV1(): void
     {
         $this->socketStub
@@ -110,9 +109,6 @@ final class NuVotifierTest extends TestCase
         $this->assertNull($this->nuvotifier->sendVote($voteStub));
     }
 
-    /**
-     * @requires PHPUnit >= 8
-     */
     public function testNotVotifierException(): void
     {
         $this->socketStub
@@ -126,9 +122,6 @@ final class NuVotifierTest extends TestCase
         $this->nuvotifierV2->sendVote($voteStub);
     }
 
-    /**
-     * @requires PHPUnit >= 8
-     */
     public function testNotVotifierException2(): void
     {
         $this->socketStub
@@ -142,9 +135,6 @@ final class NuVotifierTest extends TestCase
         $this->nuvotifierV2->sendVote($voteStub);
     }
 
-    /**
-     * @requires PHPUnit >= 8
-     */
     public function testNotVotifierException3(): void
     {
         $this->socketStub
@@ -158,9 +148,6 @@ final class NuVotifierTest extends TestCase
         $this->nuvotifierV2->sendVote($voteStub);
     }
 
-    /**
-     * @requires PHPUnit >= 8
-     */
     public function testPackageNotSentException(): void
     {
         $this->socketStub
@@ -178,9 +165,6 @@ final class NuVotifierTest extends TestCase
         $this->nuvotifierV2->sendVote($voteStub);
     }
 
-    /**
-     * @requires PHPUnit >= 8
-     */
     public function testPackageNotReceivedException(): void
     {
         $this->socketStub
@@ -197,9 +181,6 @@ final class NuVotifierTest extends TestCase
         $this->nuvotifierV2->sendVote($voteStub);
     }
 
-    /**
-     * @requires PHPUnit >= 8
-     */
     public function testNuVotifierChallengeInvalidException(): void
     {
         $this->socketStub
@@ -216,9 +197,6 @@ final class NuVotifierTest extends TestCase
         $this->nuvotifierV2->sendVote($voteStub);
     }
 
-    /**
-     * @requires PHPUnit >= 8
-     */
     public function testNuVotifierUnknownServiceException(): void
     {
         $this->socketStub
@@ -235,9 +213,6 @@ final class NuVotifierTest extends TestCase
         $this->nuvotifierV2->sendVote($voteStub);
     }
 
-    /**
-     * @requires PHPUnit >= 8
-     */
     public function testNuVotifierSignatureInvalidException(): void
     {
         $this->socketStub
@@ -254,9 +229,6 @@ final class NuVotifierTest extends TestCase
         $this->nuvotifierV2->sendVote($voteStub);
     }
 
-    /**
-     * @requires PHPUnit >= 8
-     */
     public function testNuVotifierUsernameTooLongException(): void
     {
         $this->socketStub
@@ -273,9 +245,6 @@ final class NuVotifierTest extends TestCase
         $this->nuvotifierV2->sendVote($voteStub);
     }
 
-    /**
-     * @requires PHPUnit >= 8
-     */
     public function testNuVotifierException(): void
     {
         $this->socketStub
@@ -292,9 +261,6 @@ final class NuVotifierTest extends TestCase
         $this->nuvotifierV2->sendVote($voteStub);
     }
 
-    /**
-     * @requires PHPUnit >= 8
-     */
     public function testSend(): void
     {
         $this->socketStub
