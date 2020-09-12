@@ -31,29 +31,15 @@ use const DIRECTORY_SEPARATOR;
  */
 final class ClassicVotifierTest extends TestCase
 {
-    /**
-     * @var ClassicVotifier The main class
-     */
-    private $object;
-
-    protected function setUp(): void
+    public function testInstanceOf(): void
     {
         $key = file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . 'votifier_public.key');
-        $this->object = (new ClassicVotifier())
+        $object = (new ClassicVotifier())
             ->setHost('mock_host')
             ->setPort(0)
             ->setPublicKey($key)
         ;
-    }
-
-    protected function tearDown(): void
-    {
-        $this->object = null;
-    }
-
-    public function testInstanceOf(): void
-    {
-        $this->assertInstanceOf('D3strukt0r\VotifierClient\ServerType\ClassicVotifier', $this->object);
+        $this->assertInstanceOf('D3strukt0r\VotifierClient\ServerType\ClassicVotifier', $object);
     }
 
     /**
