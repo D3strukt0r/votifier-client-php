@@ -10,7 +10,7 @@
  * @link      https://github.com/D3strukt0r/votifier-client-php
  */
 
-namespace D3strukt0r\VotifierClient\ServerType;
+namespace D3strukt0r\VotifierClient\Server;
 
 use D3strukt0r\VotifierClient\Exception\NotVotifierException;
 use D3strukt0r\VotifierClient\Exception\NuVotifierChallengeInvalidException;
@@ -21,7 +21,7 @@ use D3strukt0r\VotifierClient\Exception\NuVotifierUsernameTooLongException;
 use D3strukt0r\VotifierClient\Exception\Socket\PackageNotReceivedException;
 use D3strukt0r\VotifierClient\Exception\Socket\PackageNotSentException;
 use D3strukt0r\VotifierClient\Socket;
-use D3strukt0r\VotifierClient\VoteType\ClassicVote;
+use D3strukt0r\VotifierClient\Vote\ClassicVote;
 use PHPUnit\Framework\TestCase;
 
 use function file_get_contents;
@@ -33,7 +33,7 @@ use const DIRECTORY_SEPARATOR;
  *
  * @requires PHPUnit >= 8
  *
- * @covers \D3strukt0r\VotifierClient\ServerType\NuVotifier
+ * @covers \D3strukt0r\VotifierClient\Server\NuVotifier
  *
  * @internal
  */
@@ -82,7 +82,7 @@ final class NuVotifierTest extends TestCase
 
     public function testInstanceOf(): void
     {
-        $this->assertInstanceOf('D3strukt0r\VotifierClient\ServerType\NuVotifier', $this->nuvotifier);
+        $this->assertInstanceOf('D3strukt0r\VotifierClient\Server\NuVotifier', $this->nuvotifier);
     }
 
     public function testProtocolV2(): void

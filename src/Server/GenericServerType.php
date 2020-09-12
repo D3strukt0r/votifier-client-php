@@ -10,7 +10,7 @@
  * @link      https://github.com/D3strukt0r/votifier-client-php
  */
 
-namespace D3strukt0r\VotifierClient\ServerType;
+namespace D3strukt0r\VotifierClient\Server;
 
 use D3strukt0r\VotifierClient\Socket;
 

@@ -10,16 +10,16 @@
  * @link      https://github.com/D3strukt0r/votifier-client-php
  */
 
-namespace D3strukt0r\VotifierClient\ServerType;
+namespace D3strukt0r\VotifierClient\Server;
 
 use D3strukt0r\VotifierClient\Socket;
-use D3strukt0r\VotifierClient\VoteType\VoteInterface;
+use D3strukt0r\VotifierClient\Vote\VoteInterface;
 use PHPUnit\Framework\TestCase;
 
 /**
  * Class GenericServerTypeTest.
  *
- * @covers \D3strukt0r\VotifierClient\ServerType\GenericServerType
+ * @covers \D3strukt0r\VotifierClient\Server\GenericServerType
  *
  * @internal
  */
@@ -51,7 +51,7 @@ final class GenericServerTypeTest extends TestCase
 
     public function testInstanceOf(): void
     {
-        $this->assertInstanceOf('D3strukt0r\VotifierClient\ServerType\GenericServerType', $this->object);
+        $this->assertInstanceOf('D3strukt0r\VotifierClient\Server\GenericServerType', $this->object);
     }
 
     public function testSocket(): void
@@ -75,7 +75,7 @@ final class GenericServerTypeTest extends TestCase
 
     public function testPublicKey(): void
     {
-        $key = file_get_contents('tests/ServerType/votifier_public.key');
+        $key = file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . 'votifier_public.key');
         $keyFormatted = wordwrap($key, 65, "\n", true);
         $keyFormatted = <<<EOF
 -----BEGIN PUBLIC KEY-----
