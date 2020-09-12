@@ -124,7 +124,7 @@ class NuVotifier extends Votifier
             // Send the vote
             $socket->write($package = $this->preparePackageV2($vote, $challenge));
 
-            // Check is the vote was successful
+            // Check if the vote was successful
             /*
              * https://github.com/NuVotifier/NuVotifier/blob/master/common/src/main/java/com/vexsoftware/votifier/net/protocol/VotifierProtocol2Decoder.java
              * Examples:
