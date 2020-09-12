@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <analysis>
-  <link href="https://insight.sensiolabs.com/api/projects/165fe662-6180-4a88-a06c-9b05c0a53f86/analyses/3" rel="self" type="application/vnd.com.sensiolabs.insight+xml"/>
-  <link href="https://insight.sensiolabs.com/api/projects/165fe662-6180-4a88-a06c-9b05c0a53f86/analyses/3/status" rel="status" type="application/vnd.com.sensiolabs.insight+xml"/>
-  <link href="https://insight.sensiolabs.com/api/projects/165fe662-6180-4a88-a06c-9b05c0a53f86" rel="project" type="application/vnd.com.sensiolabs.insight+xml"/>
-  <link href="https://insight.sensiolabs.com/projects/165fe662-6180-4a88-a06c-9b05c0a53f86/analyses/3" rel="self" type="text/html"/>
+  <link href="https://insight.sensiolabs.com/api/projects/bd3d1f70-187d-4717-9d8e-83f5fa408e21/analyses/2" rel="self" type="application/vnd.com.sensiolabs.insight+xml"/>
+  <link href="https://insight.sensiolabs.com/api/projects/bd3d1f70-187d-4717-9d8e-83f5fa408e21/analyses/2/status" rel="status" type="application/vnd.com.sensiolabs.insight+xml"/>
+  <link href="https://insight.sensiolabs.com/api/projects/bd3d1f70-187d-4717-9d8e-83f5fa408e21" rel="project" type="application/vnd.com.sensiolabs.insight+xml"/>
+  <link href="https://insight.sensiolabs.com/projects/bd3d1f70-187d-4717-9d8e-83f5fa408e21/analyses/2" rel="self" type="text/html"/>
   <status><![CDATA[finished]]></status>
   <violations>
     <violation severity="minor" category="codestyle" ignored="false">
@@ -22,7 +22,7 @@
 
 # Icon must end with two \r
 Icon]]></context>
-      <link href="https://insight.sensiolabs.com/projects/165fe662-6180-4a88-a06c-9b05c0a53f86/analyses/3?status=new#892780799" rel="self" type="text/html"/>
+      <link href="https://insight.sensiolabs.com/projects/bd3d1f70-187d-4717-9d8e-83f5fa408e21/analyses/2?status=new#892780836" rel="self" type="text/html"/>
     </violation>
     <violation severity="minor" category="codestyle" ignored="false">
       <line>34</line>
@@ -40,7 +40,7 @@ Icon
 ._*
 
 # Files that might appear in the root of a volume]]></context>
-      <link href="https://insight.sensiolabs.com/projects/165fe662-6180-4a88-a06c-9b05c0a53f86/analyses/3?status=new#892780800" rel="self" type="text/html"/>
+      <link href="https://insight.sensiolabs.com/projects/bd3d1f70-187d-4717-9d8e-83f5fa408e21/analyses/2?status=new#892780837" rel="self" type="text/html"/>
     </violation>
     <violation severity="minor" category="codestyle" ignored="false">
       <line>180</line>
@@ -58,7 +58,7 @@ ehthumbs.db
 ehthumbs_vista.db
 
 # Dump file]]></context>
-      <link href="https://insight.sensiolabs.com/projects/165fe662-6180-4a88-a06c-9b05c0a53f86/analyses/3?status=new#892780803" rel="self" type="text/html"/>
+      <link href="https://insight.sensiolabs.com/projects/bd3d1f70-187d-4717-9d8e-83f5fa408e21/analyses/2?status=new#892780839" rel="self" type="text/html"/>
     </violation>
     <violation severity="minor" category="codestyle" ignored="false">
       <line>182</line>
@@ -76,25 +76,7 @@ ehthumbs_vista.db
 # Dump file
 *.stackdump
 ]]></context>
-      <link href="https://insight.sensiolabs.com/projects/165fe662-6180-4a88-a06c-9b05c0a53f86/analyses/3?status=new#892780802" rel="self" type="text/html"/>
-    </violation>
-    <violation severity="minor" category="deadcode" ignored="false">
-      <line>125</line>
-      <resource><![CDATA[src/Server/NuVotifier.php]]></resource>
-      <title>Your project should not contain unused code</title>
-      <message><![CDATA[This package local variable is declared but never used. You should remove it.]]></message>
-      <context start-line="120" end-line="130"><![CDATA[
-            // Update the timestamp of the vote being sent
-            $vote->setTimestamp(new DateTime());
-
-            // Send the vote
-            $socket->write($package = $this->preparePackageV2($vote, $challenge));
-
-            // Check if the vote was successful
-            /*
-             * https://github.com/NuVotifier/NuVotifier/blob/master/common/src/main/java/com/vexsoftware/votifier/net/protocol/VotifierProtocol2Decoder.java
-             * Examples:]]></context>
-      <link href="https://insight.sensiolabs.com/projects/165fe662-6180-4a88-a06c-9b05c0a53f86/analyses/3?status=new#892780801" rel="self" type="text/html"/>
+      <link href="https://insight.sensiolabs.com/projects/bd3d1f70-187d-4717-9d8e-83f5fa408e21/analyses/2?status=new#892780838" rel="self" type="text/html"/>
     </violation>
   </violations>
   <grades>
@@ -107,14 +89,14 @@ ehthumbs_vista.db
   <failed>false</failed>
   <grade><![CDATA[silver]]></grade>
   <next-grade><![CDATA[gold]]></next-grade>
-  <begin-at><![CDATA[2020-09-12T23:20:22+0000]]></begin-at>
-  <end-at><![CDATA[2020-09-12T23:22:10+0000]]></end-at>
-  <duration>13</duration>
-  <number>3</number>
+  <begin-at><![CDATA[2020-09-12T23:32:35+0000]]></begin-at>
+  <end-at><![CDATA[2020-09-12T23:34:31+0000]]></end-at>
+  <duration>12</duration>
+  <number>2</number>
   <altered>false</altered>
-  <remediation-cost>1.25</remediation-cost>
-  <nb-violations>5</nb-violations>
-  <reference><![CDATA[07e999b30c2f28e9c7729d37c2da3c9a227290a3]]></reference>
+  <remediation-cost>1</remediation-cost>
+  <nb-violations>4</nb-violations>
+  <reference><![CDATA[991eaed501fce2475f27016ada485d827111b9b4]]></reference>
   <launched-by><![CDATA[xlpixel]]></launched-by>
   <configuration>
     <ignored-branches>
@@ -185,10 +167,10 @@ ehthumbs_vista.db
     <notifications/>
   </configuration>
   <previous-analyses-references>
-    <analysis-reference number="3">07e999b30c2f28e9c7729d37c2da3c9a227290a3</analysis-reference>
+    <analysis-reference number="2">991eaed501fce2475f27016ada485d827111b9b4</analysis-reference>
     <analysis-reference number="1">61f7fa0f78cead3fca504e1bc82bb00d39b224ed</analysis-reference>
   </previous-analyses-references>
-  <nb-violations-new>5</nb-violations-new>
+  <nb-violations-new>4</nb-violations-new>
   <nb-violations-existing>0</nb-violations-existing>
   <nb-violations-fixed>0</nb-violations-fixed>
   <nb-violations-ignored>0</nb-violations-ignored>
