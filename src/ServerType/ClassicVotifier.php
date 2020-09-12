@@ -25,14 +25,6 @@ use DateTime;
 class ClassicVotifier extends GenericServerType
 {
     /**
-     * @return Socket returns a Socket object
-     */
-    public function getSocket(): Socket
-    {
-        return new Socket();
-    }
-
-    /**
      * {@inheritdoc}
      *
      * @throws NoConnectionException       If connection couldn't be established

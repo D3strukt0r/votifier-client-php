@@ -12,6 +12,7 @@
 
 namespace D3strukt0r\VotifierClient\ServerType;
 
+use D3strukt0r\VotifierClient\Socket;
 use D3strukt0r\VotifierClient\VoteType\VoteInterface;
 use PHPUnit\Framework\TestCase;
 
@@ -51,6 +52,13 @@ final class GenericServerTypeTest extends TestCase
     public function testInstanceOf(): void
     {
         $this->assertInstanceOf('D3strukt0r\VotifierClient\ServerType\GenericServerType', $this->object);
+    }
+
+    public function testSocket(): void
+    {
+        $socket = new Socket();
+        $this->object->setSocket($socket);
+        $this->assertSame($socket, $this->object->getSocket());
     }
 
     public function testHost(): void

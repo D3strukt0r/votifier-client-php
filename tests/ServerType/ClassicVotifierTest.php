@@ -13,8 +13,9 @@
 namespace D3strukt0r\VotifierClient\ServerType;
 
 use D3strukt0r\VotifierClient\Exception\NotVotifierException;
-use D3strukt0r\VotifierClient\Exception\PackageNotSentException;
-use D3strukt0r\VotifierClient\ServerConnection;
+use D3strukt0r\VotifierClient\Exception\Socket\NoConnectionException;
+use D3strukt0r\VotifierClient\Exception\Socket\PackageNotSentException;
+use D3strukt0r\VotifierClient\Socket;
 use D3strukt0r\VotifierClient\VoteType\ClassicVote;
 use PHPUnit\Framework\TestCase;
 
@@ -31,15 +32,49 @@ use const DIRECTORY_SEPARATOR;
  */
 final class ClassicVotifierTest extends TestCase
 {
-    public function testInstanceOf(): void
+    /**
+     * @var Socket The Socket tool class
+     */
+    private $socketStub;
+
+    /**
+     * @var ClassicVotifier The main class
+     */
+    private $classicVotifier;
+
+    protected function setUp(): void
     {
-        $key = file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . 'votifier_public.key');
-        $object = (new ClassicVotifier())
+        $this->socketStub = $this->createStub(Socket::class);
+        $this->classicVotifier = (new ClassicVotifier())
+            ->setSocket($this->socketStub)
             ->setHost('mock_host')
             ->setPort(0)
-            ->setPublicKey($key)
+            ->setPublicKey(file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . 'votifier_public.key'))
         ;
-        $this->assertInstanceOf('D3strukt0r\VotifierClient\ServerType\ClassicVotifier', $object);
+    }
+
+    protected function tearDown(): void
+    {
+        $this->socketStub = null;
+        $this->classicVotifier = null;
+    }
+
+    public function testInstanceOf(): void
+    {
+        $this->assertInstanceOf('D3strukt0r\VotifierClient\ServerType\ClassicVotifier', $this->classicVotifier);
+    }
+
+    public function testNoConnectionException(): void
+    {
+        $this->socketStub
+            ->method('open')
+            ->willThrowException(new NoConnectionException())
+        ;
+
+        $voteStub = $this->createStub(ClassicVote::class);
+
+        $this->expectException(NoConnectionException::class);
+        $this->classicVotifier->sendVote($voteStub);
     }
 
     /**
@@ -47,16 +82,15 @@ final class ClassicVotifierTest extends TestCase
      */
     public function testNotVotifierException(): void
     {
-        $stubServerConnection = $this->createStub(ServerConnection::class);
-        $stubServerConnection
-            ->method('receive')
+        $this->socketStub
+            ->method('read')
             ->willReturn('SOMETHING_WEIRD')
         ;
 
-        $stubVote = $this->createStub(ClassicVote::class);
+        $voteStub = $this->createStub(ClassicVote::class);
 
         $this->expectException(NotVotifierException::class);
-        $this->object->send($stubServerConnection, $stubVote);
+        $this->classicVotifier->sendVote($voteStub);
     }
 
     /**
@@ -64,20 +98,19 @@ final class ClassicVotifierTest extends TestCase
      */
     public function testPackageNotSentException(): void
     {
-        $stubServerConnection = $this->createStub(ServerConnection::class);
-        $stubServerConnection
-            ->method('receive')
-            ->willReturn('VOTIFIER')
+        $this->socketStub
+            ->method('read')
+            ->willReturn('VOTIFIER 1.9')
         ;
-        $stubServerConnection
-            ->method('send')
-            ->willReturn(false)
+        $this->socketStub
+            ->method('write')
+            ->willThrowException(new PackageNotSentException())
         ;
 
-        $stubVote = $this->createStub(ClassicVote::class);
+        $voteStub = $this->createStub(ClassicVote::class);
 
         $this->expectException(PackageNotSentException::class);
-        $this->object->send($stubServerConnection, $stubVote);
+        $this->classicVotifier->sendVote($voteStub);
     }
 
     /**
@@ -85,18 +118,13 @@ final class ClassicVotifierTest extends TestCase
      */
     public function testSend(): void
     {
-        $stubServerConnection = $this->createStub(ServerConnection::class);
-        $stubServerConnection
-            ->method('receive')
-            ->willReturn('VOTIFIER')
-        ;
-        $stubServerConnection
-            ->method('send')
-            ->willReturn(true)
+        $this->socketStub
+            ->method('read')
+            ->willReturn('VOTIFIER 1.9')
         ;
 
-        $stubVote = $this->createStub(ClassicVote::class);
+        $voteStub = $this->createStub(ClassicVote::class);
 
-        $this->assertNull($this->object->send($stubServerConnection, $stubVote));
+        $this->assertNull($this->classicVotifier->sendVote($voteStub));
     }
 }
