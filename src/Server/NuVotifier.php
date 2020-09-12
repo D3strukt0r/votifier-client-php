@@ -122,7 +122,7 @@ class NuVotifier extends Votifier
             $vote->setTimestamp(new DateTime());
 
             // Send the vote
-            $socket->write($package = $this->preparePackageV2($vote, $challenge));
+            $socket->write($this->preparePackageV2($vote, $challenge));
 
             // Check if the vote was successful
             /*
