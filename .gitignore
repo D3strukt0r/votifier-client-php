@@ -204,7 +204,7 @@ $RECYCLE.BIN/
 # End of https://www.toptal.com/developers/gitignore/api/linux,macos,phpunit,windows,composer,phpstorm,phpcodesniffer
 
 # Sphinx documentation
-docs/_build/
+docs/build/
 
 # PHP CodeSniffer
 .php_codesniffer_cache.json
