@@ -69,11 +69,20 @@ class Votifier extends GenericServerType
     protected function checkRequiredVariablesForSocket(): void
     {
         if (!isset($this->host, $this->port)) {
-            $hostErrorMessage = !isset($this->host) ? 'The host variable wasn\'t set with "->setHost(...)".' : '';
-            $portErrorMessage = !isset($this->post) ? 'The port variable wasn\'t set with "->setPort(...)".' : '';
-            $space = mb_strlen($hostErrorMessage) > 0 && mb_strlen($portErrorMessage) > 0 ? ' ' : '';
+            // $countError = 0;
+            $errorMessage = '';
 
-            throw new InvalidArgumentException($hostErrorMessage . $space . $portErrorMessage);
+            if (null === $this->host) {
+                $errorMessage .= 'The host variable wasn\'t set with "->setHost(...)".';
+                // ++$countError;
+            }
+            // Not needed, as port has a default value
+            // if (null === $this->port) {
+            //     $errorMessage .= $countError > 0 ? ' ' : '';
+            //     $errorMessage .= 'The port variable wasn\'t set with "->setPort(...)".';
+            // }
+
+            throw new InvalidArgumentException($errorMessage);
         }
     }
 
@@ -89,6 +98,7 @@ class Votifier extends GenericServerType
             || null === $vote->getUsername()
             || null === $vote->getAddress()
             || null === $vote->getTimestamp()
+            || !isset($this->publicKey)
         ) {
             $countError = 0;
             $errorMessage = '';
@@ -111,6 +121,10 @@ class Votifier extends GenericServerType
                 $errorMessage .= $countError > 0 ? ' ' : '';
                 $errorMessage .= 'The host variable wasn\'t set with "->setTimestamp(...)".';
             }
+            if (!isset($this->publicKey)) {
+                $errorMessage .= $countError > 0 ? ' ' : '';
+                $errorMessage .= 'The public key variable wasn\'t set with "->setPublicKey(...)".';
+            }
 
             throw new InvalidArgumentException($errorMessage);
         }
@@ -126,7 +140,10 @@ class Votifier extends GenericServerType
      */
     protected function verifyConnection(?string $header): bool
     {
-        if (null === $header || false === mb_strpos($header, 'VOTIFIER')) {
+        if (
+            null === $header
+            || false === mb_strpos($header, 'VOTIFIER')
+        ) {
             return false;
         }
 

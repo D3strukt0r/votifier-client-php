@@ -23,6 +23,8 @@ use D3strukt0r\VotifierClient\Exception\Socket\PackageNotSentException;
 use D3strukt0r\VotifierClient\Socket;
 use D3strukt0r\VotifierClient\Vote\ClassicVote;
 use D3strukt0r\VotifierClient\Vote\VoteInterface;
+use DateTime;
+use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
 use function file_get_contents;
@@ -141,6 +143,104 @@ final class NuVotifierTest extends TestCase
 
         $this->expectException(NotVotifierException::class);
         $this->nuvotifierV2->sendVote($this->vote);
+    }
+
+    public function checkRequiredVariablesForPackageProvider(): array
+    {
+        return [
+            'nothing set' => [
+                null,
+                null,
+                null,
+                null,
+                null,
+            ],
+            'only service name set' => [
+                'mock_service_name',
+                null,
+                null,
+                null,
+                null,
+            ],
+            'only username set' => [
+                null,
+                'mock_username',
+                null,
+                null,
+                null,
+            ],
+            'only service name & username set' => [
+                'mock_service_name',
+                'mock_username',
+                null,
+                null,
+                null,
+            ],
+            'only address set' => [
+                null,
+                null,
+                'mock_0.0.0.0',
+                null,
+                null,
+            ],
+            'only service name & username & address' => [
+                'mock_service_name',
+                'mock_username',
+                'mock_0.0.0.0',
+                null,
+                null,
+            ],
+            'only timestamp set' => [
+                null,
+                null,
+                null,
+                (new DateTime())->getTimestamp(),
+                null,
+            ],
+            'only token' => [
+                null,
+                null,
+                null,
+                null,
+                'mock_token',
+            ],
+        ];
+    }
+
+    /**
+     * @param $serviceName
+     * @param $username
+     * @param $address
+     * @param $timestamp
+     * @param $token
+     *
+     * @dataProvider checkRequiredVariablesForPackageProvider
+     */
+    public function testCheckRequiredVariablesForPackage($serviceName, $username, $address, $timestamp, $token): void
+    {
+        $this->socketStub
+            ->method('read')
+            ->willReturn('VOTIFIER 2 mock_challenge')
+        ;
+
+        $nuvotifierV2 = (new NuVotifier())
+            ->setSocket($this->socketStub)
+            ->setHost('mock_host')
+            ->setPort(0)
+            ->setProtocolV2(true)
+        ;
+        if (null !== $token) {
+            $nuvotifierV2->setToken($token);
+        }
+
+        $voteStub = $this->createStub(ClassicVote::class);
+        $voteStub->method('getServiceName')->willReturn($serviceName);
+        $voteStub->method('getUsername')->willReturn($username);
+        $voteStub->method('getAddress')->willReturn($address);
+        $voteStub->method('getTimestamp')->willReturn($timestamp);
+
+        $this->expectException(InvalidArgumentException::class);
+        $nuvotifierV2->sendVote($voteStub);
     }
 
     public function testPackageNotSentException(): void

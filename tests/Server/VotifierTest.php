@@ -35,7 +35,7 @@ use const DIRECTORY_SEPARATOR;
  *
  * @internal
  */
-final class ClassicVotifierTest extends TestCase
+final class VotifierTest extends TestCase
 {
     /**
      * @var Socket The Socket tool class
@@ -133,12 +133,55 @@ final class ClassicVotifierTest extends TestCase
     public function checkRequiredVariablesForPackageProvider(): array
     {
         return [
-            'nothing set' => [null, null, null, null],
-            'only service name set' => ['mock_service_name', null, null, null],
-            'only username set' => [null, 'mock_username', null, null],
-            'only service name & username set' => ['mock_service_name', 'mock_username', null, null],
-            'only address set' => [null, null, 'mock_0.0.0.0', null],
-            'only timestamp set' => [null, null, null, (new DateTime())->getTimestamp()],
+            'nothing set' => [
+                null,
+                null,
+                null,
+                null,
+                null,
+            ],
+            'only service name set' => [
+                'mock_service_name',
+                null,
+                null,
+                null,
+                null,
+            ],
+            'only username set' => [
+                null,
+                'mock_username',
+                null,
+                null,
+                null,
+            ],
+            'only service name & username set' => [
+                'mock_service_name',
+                'mock_username',
+                null,
+                null,
+                null,
+            ],
+            'only address set' => [
+                null,
+                null,
+                'mock_0.0.0.0',
+                null,
+                null,
+            ],
+            'only timestamp set' => [
+                null,
+                null,
+                null,
+                (new DateTime())->getTimestamp(),
+                null,
+            ],
+            'only key' => [
+                null,
+                null,
+                null,
+                null,
+                file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . 'votifier_public.key'),
+            ],
         ];
     }
 
@@ -147,15 +190,25 @@ final class ClassicVotifierTest extends TestCase
      * @param $username
      * @param $address
      * @param $timestamp
+     * @param $key
      *
      * @dataProvider checkRequiredVariablesForPackageProvider
      */
-    public function testCheckRequiredVariablesForPackage($serviceName, $username, $address, $timestamp): void
+    public function testCheckRequiredVariablesForPackage($serviceName, $username, $address, $timestamp, $key): void
     {
         $this->socketStub
             ->method('read')
             ->willReturn('VOTIFIER 1.9')
         ;
+
+        $votifier = (new Votifier())
+            ->setSocket($this->socketStub)
+            ->setHost('mock_host')
+            ->setPort(0)
+        ;
+        if (null !== $key) {
+            $votifier->setPublicKey($key);
+        }
 
         $voteStub = $this->createStub(ClassicVote::class);
         $voteStub->method('getServiceName')->willReturn($serviceName);
@@ -164,7 +217,7 @@ final class ClassicVotifierTest extends TestCase
         $voteStub->method('getTimestamp')->willReturn($timestamp);
 
         $this->expectException(InvalidArgumentException::class);
-        $this->votifier->sendVote($voteStub);
+        $votifier->sendVote($voteStub);
     }
 
     public function testPackageNotSentException(): void

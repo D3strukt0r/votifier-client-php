@@ -59,7 +59,7 @@ abstract class GenericServerType implements ServerTypeInterface
     /**
      * {@inheritdoc}
      */
-    public function getHost(): string
+    public function getHost(): ?string
     {
         return $this->host;
     }
@@ -85,7 +85,7 @@ abstract class GenericServerType implements ServerTypeInterface
     /**
      * {@inheritdoc}
      */
-    public function setPort(int $port)
+    public function setPort(int $port): self
     {
         $this->port = $port;
 
@@ -95,7 +95,7 @@ abstract class GenericServerType implements ServerTypeInterface
     /**
      * {@inheritdoc}
      */
-    public function getPublicKey(): string
+    public function getPublicKey(): ?string
     {
         return $this->publicKey;
     }
