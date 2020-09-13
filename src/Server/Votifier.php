@@ -18,6 +18,7 @@ use D3strukt0r\VotifierClient\Exception\Socket\PackageNotReceivedException;
 use D3strukt0r\VotifierClient\Exception\Socket\PackageNotSentException;
 use D3strukt0r\VotifierClient\Vote\VoteInterface;
 use DateTime;
+use InvalidArgumentException;
 
 /**
  * The Class to access a server which uses the classic "Votifier" plugin.
@@ -27,6 +28,7 @@ class Votifier extends GenericServerType
     /**
      * {@inheritdoc}
      *
+     * @throws InvalidArgumentException    If one required parameter wasn't set
      * @throws NoConnectionException       If connection couldn't be established
      * @throws NotVotifierException        If the server we are connected to is not a valid Votifier server
      * @throws PackageNotReceivedException If there was an error receiving the package
@@ -34,6 +36,9 @@ class Votifier extends GenericServerType
      */
     public function sendVote(VoteInterface ...$votes): void
     {
+        // Check if all variables have been set, to create a connection
+        $this->checkRequiredVariablesForSocket();
+
         foreach ($votes as $vote) {
             // Connect to the server
             $socket = $this->getSocket();
@@ -47,11 +52,67 @@ class Votifier extends GenericServerType
             // Update the timestamp of the vote being sent
             $vote->setTimestamp(new DateTime());
 
+            // Check if all variables have been set, to create a package
+            $this->checkRequiredVariablesForPackage($vote);
+
             // Send the vote
             $socket->write($this->preparePackage($vote));
 
             // Make sure to close the connection after package was sent
             $socket->__destruct();
+        }
+    }
+
+    /**
+     * @throws InvalidArgumentException If one required parameter wasn't set
+     */
+    protected function checkRequiredVariablesForSocket(): void
+    {
+        if (!isset($this->host, $this->port)) {
+            $hostErrorMessage = !isset($this->host) ? 'The host variable wasn\'t set with "->setHost(...)".' : '';
+            $portErrorMessage = !isset($this->post) ? 'The port variable wasn\'t set with "->setPort(...)".' : '';
+            $space = mb_strlen($hostErrorMessage) > 0 && mb_strlen($portErrorMessage) > 0 ? ' ' : '';
+
+            throw new InvalidArgumentException($hostErrorMessage . $space . $portErrorMessage);
+        }
+    }
+
+    /**
+     * @param VoteInterface $vote The vote to check
+     *
+     * @throws InvalidArgumentException If one required parameter wasn't set
+     */
+    protected function checkRequiredVariablesForPackage(VoteInterface $vote)
+    {
+        if (
+            null === $vote->getServiceName()
+            || null === $vote->getUsername()
+            || null === $vote->getAddress()
+            || null === $vote->getTimestamp()
+        ) {
+            $countError = 0;
+            $errorMessage = '';
+
+            if (null === $vote->getServiceName()) {
+                $errorMessage .= 'The host variable wasn\'t set with "->setServiceName(...)".';
+                ++$countError;
+            }
+            if (null === $vote->getUsername()) {
+                $errorMessage .= $countError > 0 ? ' ' : '';
+                $errorMessage .= 'The host variable wasn\'t set with "->setUsername(...)".';
+                ++$countError;
+            }
+            if (null === $vote->getAddress()) {
+                $errorMessage .= $countError > 0 ? ' ' : '';
+                $errorMessage .= 'The host variable wasn\'t set with "->setAddress(...)".';
+                ++$countError;
+            }
+            if (null === $vote->getTimestamp()) {
+                $errorMessage .= $countError > 0 ? ' ' : '';
+                $errorMessage .= 'The host variable wasn\'t set with "->setTimestamp(...)".';
+            }
+
+            throw new InvalidArgumentException($errorMessage);
         }
     }
 

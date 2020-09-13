@@ -31,12 +31,12 @@ class NuVotifier extends Votifier
     /**
      * @var bool use version 2 of the protocol
      */
-    private $protocolV2 = false;
+    protected $protocolV2 = false;
 
     /**
      * @var string|null The token from the config.yml.
      */
-    private $token;
+    protected $token;
 
     /**
      * Checks whether the connection uses the version 2 protocol.
