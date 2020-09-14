@@ -28,13 +28,14 @@ Table of content
    :maxdepth: 2
    :numbered: 1
 
-   about/story
-   about/faq
-   about/changelog
-   about/contributing
-   about/channels
-   about/code-of-conduct
-   about/sponsors
+   appendix/story
+   appendix/sponsors
+   appendix/faq
+   appendix/changelog
+   appendix/contributing
+   appendix/code-of-conduct
+   appendix/copyright
+
 
 Indices and tables
 ==================

@@ -16,9 +16,9 @@ use D3strukt0r\VotifierClient\Vote\VoteInterface;
 use Exception;
 
 /**
- * The interface ServerTypeInterface is used to define a PluginType on the server.
+ * The interface ServerInterface is used to define a PluginType on the server.
  */
-interface ServerTypeInterface
+interface ServerInterface
 {
     /**
      * Gets the host.
@@ -69,9 +69,9 @@ interface ServerTypeInterface
     public function setPublicKey(string $publicKey);
 
     /**
-     * Sends the vote package to the server.
+     * Sends the vote packages to the server.
      *
-     * @param VoteInterface ...$votes The vote type package
+     * @param VoteInterface ...$votes The vote packages
      *
      * @throws Exception
      */

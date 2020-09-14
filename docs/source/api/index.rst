@@ -7,14 +7,12 @@
 .. toctree::
     :maxdepth: 1
 
-    ServerType/index
-    VoteType/index
+    Server/index
+    Vote/index
 
 **Classes**
 
 .. toctree::
     :maxdepth: 1
 
-    Messages
-    ServerConnection
-    Vote
+    Socket

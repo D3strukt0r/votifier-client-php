@@ -1,20 +1,19 @@
 **\\D3strukt0r\\VotifierClient**
 
-============
-ServerType\\
-============
+======
+Vote\\
+======
 
 **Interfaces**
 
 .. toctree::
     :maxdepth: 1
 
-    ServerTypeInterface
+    VoteInterface
 
 **Classes**
 
 .. toctree::
     :maxdepth: 1
 
-    ClassicVotifier
-    NuVotifier
+    ClassicVote

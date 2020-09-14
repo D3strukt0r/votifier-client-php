@@ -58,7 +58,7 @@ class Socket
     /**
      * Sends a string to the server.
      *
-     * @param string $string The string to send
+     * @param string $string The string which should be sent to the server
      *
      * @throws NoConnectionException   If connection has not been set up
      * @throws PackageNotSentException If there was an error sending the package
@@ -75,9 +75,9 @@ class Socket
     }
 
     /**
-     * Gets a string from the server.
+     * Reads a string which is being received from the server.
      *
-     * @param int $length The length of the string to be received
+     * @param int $length [optional] The length of the requested string
      *
      * @throws NoConnectionException       If connection has not been set up
      * @throws PackageNotReceivedException If there was an error receiving the package

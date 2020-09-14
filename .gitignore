@@ -212,3 +212,6 @@ docs/build/
 # PHP Coding Standards fixer
 .php_cs
 .php_coding_standard_cache.json
+
+# Testing
+ManualTest.php
