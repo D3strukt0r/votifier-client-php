@@ -1,10 +1,10 @@
-**\\D3strukt0r\\VotifierClient\\Vote**
+**\\D3strukt0r\\Votifier\\Client\\Vote**
 
 ===========
 ClassicVote
 ===========
 
-.. php:namespace:: D3strukt0r\VotifierClient\Vote
+.. php:namespace:: D3strukt0r\Votifier\Client\Vote
 .. php:class:: ClassicVote
 
     The classic vote package can be used by most plugins.

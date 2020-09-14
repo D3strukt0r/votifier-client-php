@@ -1,10 +1,10 @@
-**\\D3strukt0r\\VotifierClient**
+**\\D3strukt0r\\Votifier\\Client**
 
 ======
 Socket
 ======
 
-.. php:namespace:: D3strukt0r\VotifierClient
+.. php:namespace:: D3strukt0r\Votifier\Client
 .. php:class:: Socket
 
     The class ServerConnection is used to create a connection to a server.
@@ -24,7 +24,7 @@ Socket
         :param string $host: The hostname or IP address
         :param int $port: The port of Votifier
 
-        :throws: :php:exc:`\\D3strukt0r\\VotifierClient\\Exception\\Socket\\NoConnectionException` — If connection couldn't be established
+        :throws: :php:exc:`\\D3strukt0r\\Votifier\\Client\\Exception\\Socket\\NoConnectionException` — If connection couldn't be established
 
     .. php:method:: public write($string)
 
@@ -32,8 +32,8 @@ Socket
 
         :param string $string: The string which should be sent to the server
 
-        :throws: :php:exc:`\\D3strukt0r\\VotifierClient\\Exception\\Socket\\NoConnectionException` — If connection has not been set up
-        :throws: :php:exc:`\\D3strukt0r\\VotifierClient\\Exception\\Socket\\PackageNotSentException` — If there was an error sending the package
+        :throws: :php:exc:`\\D3strukt0r\\Votifier\\Client\\Exception\\Socket\\NoConnectionException` — If connection has not been set up
+        :throws: :php:exc:`\\D3strukt0r\\Votifier\\Client\\Exception\\Socket\\PackageNotSentException` — If there was an error sending the package
 
     .. php:method:: public read([$length = 64]) -> string
 
@@ -43,5 +43,5 @@ Socket
 
         :returns: string — Returns the string received from the server
 
-        :throws: :php:exc:`\\D3strukt0r\\VotifierClient\\Exception\\Socket\\NoConnectionException` — If connection has not been set up
-        :throws: :php:exc:`\\D3strukt0r\\VotifierClient\\Exception\\Socket\\PackageNotReceivedException` — If there was an error receiving the package
+        :throws: :php:exc:`\\D3strukt0r\\Votifier\\Client\\Exception\\Socket\\NoConnectionException` — If connection has not been set up
+        :throws: :php:exc:`\\D3strukt0r\\Votifier\\Client\\Exception\\Socket\\PackageNotReceivedException` — If there was an error receiving the package

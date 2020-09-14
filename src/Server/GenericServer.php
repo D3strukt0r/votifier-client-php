@@ -10,9 +10,9 @@
  * @link      https://github.com/D3strukt0r/votifier-client-php
  */
 
-namespace D3strukt0r\VotifierClient\Server;
+namespace D3strukt0r\Votifier\Client\Server;
 
-use D3strukt0r\VotifierClient\Socket;
+use D3strukt0r\Votifier\Client\Socket;
 
 /**
  * An abstract class that has all the important functions included for every server.

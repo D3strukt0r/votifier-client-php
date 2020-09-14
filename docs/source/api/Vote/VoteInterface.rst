@@ -1,10 +1,10 @@
-**\\D3strukt0r\\VotifierClient\\VoteType**
+**\\D3strukt0r\\Votifier\\Client\\VoteType**
 
 =============
 VoteInterface
 =============
 
-.. php:namespace:: D3strukt0r\VotifierClient\VoteType
+.. php:namespace:: D3strukt0r\Votifier\Client\VoteType
 .. php:interface:: VoteInterface
 
     The interface VoteInterface will be used for different kinds of vote packages.

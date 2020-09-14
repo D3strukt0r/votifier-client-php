@@ -10,13 +10,13 @@
  * @link      https://github.com/D3strukt0r/votifier-client-php
  */
 
-namespace D3strukt0r\VotifierClient\Server;
+namespace D3strukt0r\Votifier\Client\Server;
 
-use D3strukt0r\VotifierClient\Exception\NotVotifierException;
-use D3strukt0r\VotifierClient\Exception\Socket\NoConnectionException;
-use D3strukt0r\VotifierClient\Exception\Socket\PackageNotReceivedException;
-use D3strukt0r\VotifierClient\Exception\Socket\PackageNotSentException;
-use D3strukt0r\VotifierClient\Vote\VoteInterface;
+use D3strukt0r\Votifier\Client\Exception\NotVotifierException;
+use D3strukt0r\Votifier\Client\Exception\Socket\NoConnectionException;
+use D3strukt0r\Votifier\Client\Exception\Socket\PackageNotReceivedException;
+use D3strukt0r\Votifier\Client\Exception\Socket\PackageNotSentException;
+use D3strukt0r\Votifier\Client\Vote\VoteInterface;
 use DateTime;
 use InvalidArgumentException;
 

@@ -43,12 +43,12 @@
     },
     "autoload": {
         "psr-4": {
-            "D3strukt0r\\VotifierClient\\": "src/"
+            "D3strukt0r\\Votifier\\Client\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "D3strukt0r\\VotifierClient\\": "tests/"
+            "D3strukt0r\\Votifier\\Client\\": "tests/"
         }
     },
     "config": {

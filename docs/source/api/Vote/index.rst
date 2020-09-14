@@ -1,4 +1,4 @@
-**\\D3strukt0r\\VotifierClient**
+**\\D3strukt0r\\Votifier\\Client**
 
 ======
 Vote\\

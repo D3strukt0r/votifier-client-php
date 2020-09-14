@@ -1,17 +1,17 @@
-**\\D3strukt0r\\VotifierClient\\Server**
+**\\D3strukt0r\\Votifier\\Client\\Server**
 
 =============
 GenericServer
 =============
 
-.. php:namespace:: D3strukt0r\VotifierClient\Server
+.. php:namespace:: D3strukt0r\Votifier\Client\Server
 .. php:class:: GenericServer
 
     An abstract class that has all the important functions included for every server.
 
     .. php:attr:: protected $socket
 
-        :php:class:`\\D3strukt0r\\VotifierClient\\Socket` — The socket object
+        :php:class:`\\D3strukt0r\\Votifier\\Client\\Socket` — The socket object
 
     .. php:attr:: protected $host
 
@@ -29,7 +29,7 @@ GenericServer
 
         Gets the Socket.
 
-        :returns: :php:class:`\\D3strukt0r\\VotifierClient\\Socket` — Returns a Socket object
+        :returns: :php:class:`\\D3strukt0r\\Votifier\\Client\\Socket` — Returns a Socket object
 
     .. php:method:: public setSocket($socket) -> self
 

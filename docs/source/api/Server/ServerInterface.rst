@@ -1,10 +1,10 @@
-**\\D3strukt0r\\VotifierClient\\Server**
+**\\D3strukt0r\\Votifier\\Client\\Server**
 
 ===============
 ServerInterface
 ===============
 
-.. php:namespace:: D3strukt0r\VotifierClient\Server
+.. php:namespace:: D3strukt0r\Votifier\Client\Server
 .. php:interface:: ServerInterface
 
     The interface ServerInterface is used to define a PluginType on the server.
@@ -55,6 +55,6 @@ ServerInterface
 
         Sends the vote packages to the server.
 
-        :param \\D3strukt0r\\VotifierClient\\Vote\\VoteInterface $votes: The vote packages
+        :param \\D3strukt0r\\Votifier\\Client\\Vote\\VoteInterface $votes: The vote packages
 
         :throws: :php:exc:`\\Exception`

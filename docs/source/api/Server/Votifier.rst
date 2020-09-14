@@ -1,10 +1,10 @@
-**\\D3strukt0r\\VotifierClient\\Server**
+**\\D3strukt0r\\Votifier\\Client\\Server**
 
 ========
 Votifier
 ========
 
-.. php:namespace:: D3strukt0r\VotifierClient\Server
+.. php:namespace:: D3strukt0r\Votifier\Client\Server
 .. php:class:: Votifier
 
     The Class to access a server which uses the classic "Votifier" plugin.
@@ -13,13 +13,13 @@ Votifier
 
         Sends the vote packages to the server.
 
-        :param \\D3strukt0r\\VotifierClient\\Vote\\VoteInterface $votes: The vote packages
+        :param \\D3strukt0r\\Votifier\\Client\\Vote\\VoteInterface $votes: The vote packages
 
         :throws: :php:exc:`\\InvalidArgumentException` — If one required parameter wasn't set
-        :throws: :php:exc:`\\D3strukt0r\\VotifierClient\\Exception\\Socket\\NoConnectionException` — If connection couldn't be established
-        :throws: :php:exc:`\\D3strukt0r\\VotifierClient\\Exception\\Socket\\PackageNotSentException` — If there was an error receiving the package
-        :throws: :php:exc:`\\D3strukt0r\\VotifierClient\\Exception\\Socket\\PackageNotReceivedException` — If there was an error sending the package
-        :throws: :php:exc:`\\D3strukt0r\\VotifierClient\\Exception\\NotVotifierException` — If the server we are connected to is not a valid Votifier server
+        :throws: :php:exc:`\\D3strukt0r\\Votifier\\Client\\Exception\\Socket\\NoConnectionException` — If connection couldn't be established
+        :throws: :php:exc:`\\D3strukt0r\\Votifier\\Client\\Exception\\Socket\\PackageNotSentException` — If there was an error receiving the package
+        :throws: :php:exc:`\\D3strukt0r\\Votifier\\Client\\Exception\\Socket\\PackageNotReceivedException` — If there was an error sending the package
+        :throws: :php:exc:`\\D3strukt0r\\Votifier\\Client\\Exception\\NotVotifierException` — If the server we are connected to is not a valid Votifier server
 
     .. php:method:: protected checkRequiredVariablesForSocket()
 
@@ -31,7 +31,7 @@ Votifier
 
         Check that service name, username, address, timestamp and public key have been set.
 
-        :param \\D3strukt0r\\VotifierClient\\Vote\\VoteInterface $vote: The vote to check
+        :param \\D3strukt0r\\Votifier\\Client\\Vote\\VoteInterface $vote: The vote to check
 
         :throws: :php:exc:`\\InvalidArgumentException` — If one required parameter wasn't set
 
@@ -47,6 +47,6 @@ Votifier
 
         Create encrypted package for default Votifier.
 
-        :param \\D3strukt0r\\VotifierClient\\Vote\\VoteInterface $vote: The vote package with all the information
+        :param \\D3strukt0r\\Votifier\\Client\\Vote\\VoteInterface $vote: The vote package with all the information
 
         :returns: string — Returns the string to be sent to the server
