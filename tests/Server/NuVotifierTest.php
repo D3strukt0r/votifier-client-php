@@ -25,6 +25,7 @@ use D3strukt0r\Votifier\Client\Vote\ClassicVote;
 use D3strukt0r\Votifier\Client\Vote\VoteInterface;
 use DateTime;
 use InvalidArgumentException;
+use PHPUnit\Framework\MockObject\Stub;
 use PHPUnit\Framework\TestCase;
 
 use function file_get_contents;
@@ -43,7 +44,7 @@ use const DIRECTORY_SEPARATOR;
 final class NuVotifierTest extends TestCase
 {
     /**
-     * @var Socket The Socket tool class
+     * @var Socket|Stub The Socket tool class
      */
     private $socketStub;
 
