@@ -89,6 +89,24 @@ class NuVotifier extends Votifier
 
     /**
      * {@inheritdoc}
+     */
+    public function verifyConnection(): void
+    {
+        // Check if all variables have been set, to create a connection
+        $this->checkVariablesForSocket();
+
+        // Connect to the server
+        $socket = $this->getSocket();
+        $socket->open($this->getHost(), $this->getPort());
+
+        // Check whether the connection really belongs to a NuVotifier plugin
+        if (!$this->verifyConnectionHeader($socket->read(64))) {
+            throw new NotVotifierException();
+        }
+    }
+
+    /**
+     * {@inheritdoc}
      *
      * @throws NuVotifierException                 General NuVotifier Exception (an unknown exception)
      * @throws NuVotifierChallengeInvalidException NuVotifier says the challenge was invalid
@@ -114,7 +132,7 @@ class NuVotifier extends Votifier
             $socket->open($this->getHost(), $this->getPort());
 
             // Check whether the connection really belongs to a NuVotifier plugin
-            if (!$this->verifyConnection($header = $socket->read(64))) {
+            if (!$this->verifyConnectionHeader($header = $socket->read(64))) {
                 throw new NotVotifierException();
             }
 
@@ -219,7 +237,7 @@ class NuVotifier extends Votifier
      *
      * @return bool returns true if connections is available, otherwise false
      */
-    protected function verifyConnection(?string $header): bool
+    protected function verifyConnectionHeader(?string $header): bool
     {
         $header_parts = explode(' ', $header);
         if (

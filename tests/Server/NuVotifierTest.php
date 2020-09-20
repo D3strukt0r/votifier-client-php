@@ -110,6 +110,32 @@ final class NuVotifierTest extends TestCase
         $this->assertSame('mock_token', $this->nuvotifier->getToken());
     }
 
+    /**
+     * @param $readString
+     *
+     * @dataProvider notVotifierExceptionProvider
+     */
+    public function testVerifyConnection($readString): void
+    {
+        $this->socketStub
+            ->method('read')
+            ->willReturn($readString)
+        ;
+
+        $this->expectException(NotVotifierException::class);
+        $this->nuvotifier->verifyConnection();
+    }
+
+    public function testVerifyConnectionSuccess(): void
+    {
+        $this->socketStub
+            ->method('read')
+            ->willReturn('VOTIFIER 2 mock_challenge')
+        ;
+
+        $this->assertNull($this->nuvotifier->verifyConnection());
+    }
+
     public function testSendV1(): void
     {
         $this->socketStub
