@@ -106,7 +106,7 @@ class NuVotifier extends Votifier
         }
 
         // Check if all variables have been set, to create a connection
-        $this->checkRequiredVariablesForSocket();
+        $this->checkVariablesForSocket();
 
         foreach ($votes as $vote) {
             // Connect to the server
@@ -126,7 +126,7 @@ class NuVotifier extends Votifier
             $vote->setTimestamp(new DateTime());
 
             // Check if all variables have been set, to create a package
-            $this->checkRequiredVariablesForPackage($vote);
+            $this->checkVariablesForPackage($vote);
 
             // Send the vote
             $socket->write($this->preparePackageV2($vote, $challenge));
@@ -145,7 +145,7 @@ class NuVotifier extends Votifier
             if ('ok' !== $result->status) {
                 if ('Challenge is not valid' === $result->error) {
                     throw new NuVotifierChallengeInvalidException();
-                } elseif (preg_match('/Unknown service \'(.*)\'/', $result->error, $matches)) {
+                } elseif (preg_match('/Unknown service \'(.*)\'/', $result->error)) {
                     throw new NuVotifierUnknownServiceException();
                 } elseif ('Signature is not valid (invalid token?)' === $result->error) {
                     throw new NuVotifierSignatureInvalidException();
@@ -167,10 +167,10 @@ class NuVotifier extends Votifier
      *
      * @throws InvalidArgumentException If one required parameter wasn't set
      */
-    protected function checkRequiredVariablesForPackage(VoteInterface $vote)
+    protected function checkVariablesForPackage(VoteInterface $vote)
     {
         if (!$this->isProtocolV2()) {
-            parent::checkRequiredVariablesForSocket();
+            parent::checkVariablesForSocket();
 
             return;
         }

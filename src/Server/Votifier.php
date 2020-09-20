@@ -37,7 +37,7 @@ class Votifier extends GenericServer
     public function sendVote(VoteInterface ...$votes): void
     {
         // Check if all variables have been set, to create a connection
-        $this->checkRequiredVariablesForSocket();
+        $this->checkVariablesForSocket();
 
         foreach ($votes as $vote) {
             // Connect to the server
@@ -53,7 +53,7 @@ class Votifier extends GenericServer
             $vote->setTimestamp(new DateTime());
 
             // Check if all variables have been set, to create a package
-            $this->checkRequiredVariablesForPackage($vote);
+            $this->checkVariablesForPackage($vote);
 
             // Send the vote
             $socket->write($this->preparePackage($vote));
@@ -68,7 +68,7 @@ class Votifier extends GenericServer
      *
      * @throws InvalidArgumentException If one required parameter wasn't set
      */
-    protected function checkRequiredVariablesForSocket(): void
+    protected function checkVariablesForSocket(): void
     {
         if (!isset($this->host, $this->port)) {
             // $countError = 0;
@@ -95,7 +95,7 @@ class Votifier extends GenericServer
      *
      * @throws InvalidArgumentException If one required parameter wasn't set
      */
-    protected function checkRequiredVariablesForPackage(VoteInterface $vote)
+    protected function checkVariablesForPackage(VoteInterface $vote)
     {
         if (
             null === $vote->getServiceName()

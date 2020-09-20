@@ -35,13 +35,11 @@ final class GenericServerTypeTest extends TestCase
     protected function setUp(): void
     {
         $this->object = new class () extends GenericServer {
-            public function verifyConnection(?string $header): bool
-            {
-                return true;
-            }
-
             public function sendVote(VoteInterface ...$votes): void
             {
+                if (null !== $votes) {
+                    return;
+                }
             }
         };
     }
