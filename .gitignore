@@ -203,6 +203,9 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/linux,macos,phpunit,windows,composer,phpstorm,phpcodesniffer
 
+# Coverage report by PhpUnit
+/coverage/
+
 # Sphinx documentation
 docs/build/
 
