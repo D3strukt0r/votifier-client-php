@@ -207,7 +207,7 @@ $RECYCLE.BIN/
 /coverage/
 
 # Sphinx documentation
-docs/build/
+/docs/build/
 
 # PHP CodeSniffer
 .php_codesniffer_cache.json
