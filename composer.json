@@ -86,6 +86,7 @@
             ".readthedocs.yml",
             ".scrutinizer.yml",
             ".symfony.insight.yaml",
+            "CONTRIBUTING.md",
             "phpunit.xml.dist"
         ]
     }
