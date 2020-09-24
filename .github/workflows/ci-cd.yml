@@ -92,7 +92,7 @@ jobs:
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
         run: |
           curl -fsSL -o php-coveralls.phar https://github.com/php-coveralls/php-coveralls/releases/latest/download/php-coveralls.phar
-          php php-coveralls.phar -v --coverage_clover=coverage/logs/clover.xml
+          php php-coveralls.phar -v --coverage_clover=coverage/logs/clover.xml --json_path=coverage/logs/coveralls-upload.json
 
       # https://scrutinizer-ci.com/docs/tools/external-code-coverage/
       # https://github.com/scrutinizer-ci/ocular
