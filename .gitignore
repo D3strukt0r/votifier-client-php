@@ -203,8 +203,16 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/linux,macos,phpunit,windows,composer,phpstorm,phpcodesniffer
 
+# Coverage report by PhpUnit
+/coverage/
+
 # Sphinx documentation
-docs/_build/
+/docs/build/
+
+# phpDocumentor
+/.phpdoc
+/api
+phpdoc.xml
 
 # PHP CodeSniffer
 .php_codesniffer_cache.json
@@ -212,3 +220,6 @@ docs/_build/
 # PHP Coding Standards fixer
 .php_cs
 .php_coding_standard_cache.json
+
+# Testing
+ManualTest.php

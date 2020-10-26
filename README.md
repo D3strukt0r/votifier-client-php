@@ -2,47 +2,37 @@
 
 This php script allows easy using of the Bukkit plugin Votifier
 
-**Project**
+Project
 
-[![License](https://img.shields.io/packagist/l/d3strukt0r/votifier-client)][license]
+[![License](https://img.shields.io/github/license/D3strukt0r/votifier-client-php)][license]
 [![Version](https://img.shields.io/packagist/v/d3strukt0r/votifier-client?label=latest%20release)][packagist]
 [![Version (including pre-releases)](https://img.shields.io/packagist/v/D3strukt0r/votifier-client?include_prereleases&label=latest%20pre-release)][packagist]
 [![Downloads on Packagist](https://img.shields.io/packagist/dt/d3strukt0r/votifier-client)][packagist]
 [![Required PHP version](https://img.shields.io/packagist/php-v/d3strukt0r/votifier-client)][packagist]
 
-**master**-branch (alias stable, latest)
+master-branch (alias stable, latest)
 
 [![GH Action CI/CD](https://github.com/D3strukt0r/votifier-client-php/workflows/CI/CD/badge.svg?branch=master)][gh-action]
 [![Coveralls](https://img.shields.io/coveralls/github/D3strukt0r/votifier-client-php/master)][coveralls]
 [![Scrutinizer build status](https://img.shields.io/scrutinizer/build/g/D3strukt0r/votifier-client-php/master?label=scrutinizer%20build)][scrutinizer]
-[![Scrutinizer code quality](https://img.shields.io/scrutinizer/quality/g/D3strukt0r/votifier-client-php/master)][scrutinizer]
-[![SymfonyInsight](https://insight.symfony.com/projects/6056fd3d-1c44-4fa9-981d-c99ba2192c0f/mini.svg)][sensiolabs]
+[![Scrutinizer code quality](https://img.shields.io/scrutinizer/quality/g/D3strukt0r/votifier-client-php/master?label=scrutinizer%20code%20quality)][scrutinizer]
+[![Codacy grade](https://img.shields.io/codacy/grade/d97c7e16f5d24924b39f9776eeb02259/master?label=codacy%20code%20quality)][codacy]
 [![Docs build status](https://img.shields.io/readthedocs/votifier-client-php/stable)][rtfd]
 
-**develop**-branch (alias nightly)
+develop-branch (alias nightly)
 
 [![GH Action CI/CD](https://github.com/D3strukt0r/votifier-client-php/workflows/CI/CD/badge.svg?branch=develop)][gh-action]
 [![Coveralls](https://img.shields.io/coveralls/github/D3strukt0r/votifier-client-php/develop)][coveralls]
 [![Scrutinizer build status](https://img.shields.io/scrutinizer/build/g/D3strukt0r/votifier-client-php/develop?label=scrutinizer%20build)][scrutinizer]
-[![Scrutinizer code quality](https://img.shields.io/scrutinizer/quality/g/D3strukt0r/votifier-client-php/develop)][scrutinizer]
+[![Scrutinizer code quality](https://img.shields.io/scrutinizer/quality/g/D3strukt0r/votifier-client-php/develop?label=scrutinizer%20code%20quality)][scrutinizer]
+[![Codacy grade](https://img.shields.io/codacy/grade/d97c7e16f5d24924b39f9776eeb02259/develop?label=codacy%20code%20quality)][codacy]
 [![Docs build status](https://img.shields.io/readthedocs/votifier-client-php/latest)][rtfd]
-
-[license]: https://github.com/D3strukt0r/votifier-client-php/blob/master/LICENSE.txt
-[packagist]: https://packagist.org/packages/d3strukt0r/votifier-client
-[gh-action]: https://github.com/D3strukt0r/votifier-client-php/actions
-[coveralls]: https://coveralls.io/github/D3strukt0r/votifier-client-php
-[scrutinizer]: https://scrutinizer-ci.com/g/D3strukt0r/votifier-client-php/
-[sensiolabs]: https://insight.symfony.com/projects/6056fd3d-1c44-4fa9-981d-c99ba2192c0f
-[rtfd]: https://readthedocs.org/projects/votifier-client-php/
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your
-local machine for development and testing purposes. See deployment for notes on
-how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-The full documentation can be found on
-https://votifier-client-php-docs.manuele-vaccari.ch/
+The full documentation can be found [here](https://votifier-client-php.readthedocs.io).
 
 ### Prerequisites
 
@@ -55,7 +45,7 @@ What things you need to install the software and how to install them
 
 Add the client using [Composer](http://getcomposer.org/).
 
-```bash
+```shell
 composer require d3strukt0r/votifier-client
 ```
 
@@ -68,27 +58,25 @@ For the servers with the classic Votifier plugins:
 ```php
 <?php
 
-use D3strukt0r\VotifierClient\ServerType\ClassicVotifier;
-use D3strukt0r\VotifierClient\Vote;
-use D3strukt0r\VotifierClient\VoteType\ClassicVote;
+use D3strukt0r\Votifier\Client\Server\Votifier;
 
-$serverType = new ClassicVotifier('127.0.0.1', null, 'MIIBIjANBgkq...');
-$voteType = new ClassicVote($_GET['username'], 'Your vote list', $_SERVER['REMOTE_ADDR']);
-$vote = new Vote($voteType, $serverType);
+$server = (new Votifier())
+    ->setHost('127.0.0.1')
+    ->setPublicKey('MIIBIjANBgkq...')
+;
 ```
 
-For the servers which use the NuVotifier plugin (v1 protocol) (HINT: It's EXACTLY the same as method 1):
+For the servers which use the NuVotifier plugin (v1 protocol) (HINT: It's NOT the same as method 1):
 
 ```php
 <?php
 
-use D3strukt0r\VotifierClient\ServerType\NuVotifier;
-use D3strukt0r\VotifierClient\Vote;
-use D3strukt0r\VotifierClient\VoteType\ClassicVote;
+use D3strukt0r\Votifier\Client\Server\NuVotifier;
 
-$serverType = new NuVotifier('127.0.0.1', null, 'MIIBIjANBgkq...');
-$voteType = new ClassicVote($_GET['username'], 'Your vote list', $_SERVER['REMOTE_ADDR']);
-$vote = new Vote($voteType, $serverType);
+$server = (new NuVotifier())
+    ->setHost('127.0.0.1')
+    ->setPublicKey('MIIBIjANBgkq...')
+;
 ```
 
 For the servers which use the NuVotifier plugin with v2 protocol:
@@ -96,13 +84,13 @@ For the servers which use the NuVotifier plugin with v2 protocol:
 ```php
 <?php
 
-use D3strukt0r\VotifierClient\ServerType\NuVotifier;
-use D3strukt0r\VotifierClient\Vote;
-use D3strukt0r\VotifierClient\VoteType\ClassicVote;
+use D3strukt0r\Votifier\Client\Server\NuVotifier;
 
-$serverType = new NuVotifier('127.0.0.1', null, null, true, '7j302r4n...');
-$voteType = new ClassicVote($_GET['username'], 'Your vote list', $_SERVER['REMOTE_ADDR']);
-$vote = new Vote($voteType, $serverType);
+$server = (new NuVotifier())
+    ->setHost('127.0.0.1')
+    ->setProtocolV2(true)
+    ->setToken('7j302r4n...')
+;
 ```
 
 Finally, just send it.
@@ -110,11 +98,48 @@ Finally, just send it.
 ```php
 <?php
 
+use D3strukt0r\Votifier\Client\Exception\NotVotifierException;
+use D3strukt0r\Votifier\Client\Exception\NuVotifierChallengeInvalidException;
+use D3strukt0r\Votifier\Client\Exception\NuVotifierException;
+use D3strukt0r\Votifier\Client\Exception\NuVotifierSignatureInvalidException;
+use D3strukt0r\Votifier\Client\Exception\NuVotifierUnknownServiceException;
+use D3strukt0r\Votifier\Client\Exception\NuVotifierUsernameTooLongException;
+use D3strukt0r\Votifier\Client\Exception\Socket\NoConnectionException;
+use D3strukt0r\Votifier\Client\Exception\Socket\PackageNotReceivedException;
+use D3strukt0r\Votifier\Client\Exception\Socket\PackageNotSentException;
+use D3strukt0r\Votifier\Client\Server\ServerInterface;
+use D3strukt0r\Votifier\Client\Vote\ClassicVote;
+
+$vote = (new ClassicVote())
+    ->setUsername($_GET['username'])
+    ->setServiceName('Your vote list')
+    ->setAddress($_SERVER['REMOTE_ADDR'])
+;
+
 try {
-    $vote->send();
+    /** @var ServerInterface $server */
+    $server->sendVote($vote);
     // Connection created, and vote sent. Doesn't mean the server handled it correctly, but the client did.
-} catch (Exception $exception) {
-    // Could not send Vote. Normally this happens when the client can't create a connection.
+} catch (InvalidArgumentException $e) {
+    // Not all variables that are needed have been set. See $e->getMessage() for all errors.
+} catch (NoConnectionException $e) {
+    // Could not create a connection (socket) to the specified server
+} catch (PackageNotReceivedException $e) {
+    // If the package couldn't be received, for whatever reason.
+} catch (PackageNotSentException $e) {
+    // If the package couldn't be send, for whatever reason.
+} catch (NotVotifierException $e) {
+    // The server didn't give a standard Votifier response
+} catch (NuVotifierChallengeInvalidException $e) {
+    // Specific for NuVotifier: The challenge was invalid (Shouldn't happen by default, but it's here in case).
+} catch (NuVotifierSignatureInvalidException $e) {
+    // Specific for NuVotifier: The signature was invalid (Shouldn't happen by default, but it's here in case).
+} catch (NuVotifierUnknownServiceException $e) {
+    // Specific for NuVotifier: A token can be specific for a list, so if the list isn't supposed to use the given token, this message appears.
+} catch (NuVotifierUsernameTooLongException $e) {
+    // Specific for NuVotifier: A username cannot be over 16 characters (Why? Don't ask me)
+} catch (NuVotifierException $e) {
+    // In case there is a new error message that wasn't added to the library, this will take care of that.
 }
 ```
 
@@ -130,24 +155,9 @@ Run test scripts
 ./vendor/bin/phpunit
 ```
 
-```powershell
-.\vendor\bin\phpunit.bat
-```
-
 ### Coding style tests and fixes
 
-This libary already comes with `php-cs-fixer` but you can also download it from
-[here](https://cs.symfony.com/download/php-cs-fixer-v2.phar) and rename to `php-cs-fixer`.
-
-```shell
-./vendor/bin/php-cs-fixer fix
-```
-
-```powershell
-.\vendor\bin\php-cs-fixer.bat fix
-```
-
-This libary already comes with PHP_CodeSniffer but you can also download it from
+To check if the code follows the PSR-12 standard, the library PHP_CodeSniffer has been add to the development environment, but you can also download it separately from
 [here](https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar) and
 [here](https://squizlabs.github.io/PHP_CodeSniffer/phpcbf.phar).
 
@@ -157,18 +167,17 @@ To see what mistakes exist in the code run:
 ./vendor/bin/phpcs
 ```
 
-```powershell
-.\vendor\bin\phpcs.bat
-```
-
-And to fix it:
+To fix the code:
 
 ```shell
 ./vendor/bin/phpcbf
 ```
 
-```powershell
-.\vendor\bin\phpcbf.bat
+This library already comes with `php-cs-fixer` but because it's impossible to set it up to follow the PSR-12 standard, it's not a requirement anymore. It's been left in the project only for additional styling information that might be applied. It can also be downloaded separately from
+[here](https://cs.symfony.com/download/php-cs-fixer-v2.phar).
+
+```shell
+./vendor/bin/php-cs-fixer fix --diff --dry-run -v
 ```
 
 ### Code documentation
@@ -189,12 +198,22 @@ pip install -r requirements.txt
 make html
 ```
 
+### Old Code documentation
+
+You can also create a documentation with [phpDocumentor](https://github.com/phpDocumentor/phpDocumentor). For that please downloaded at least v3+ for to work from [here](https://github.com/phpDocumentor/phpDocumentor/releases). And then you can just run it
+
+```shell
+curl -fsSL -o /usr/local/bin/phpdoc https://github.com/phpDocumentor/phpDocumentor/releases/download/v3.0.0-rc/phpDocumentor.phar
+phpdoc
+```
+
 ## Built With
 
--   [PHP](https://www.php.net/) - Programming Language
--   [Composer](https://getcomposer.org/) - Dependency Management
--   [PHPUnit](https://phpunit.de/) - Testing the code
+-   [PHP](https://www.php.net) - Programming Language
+-   [Composer](https://getcomposer.org) - Dependency Management
+-   [PHPUnit](https://phpunit.de) - Testing the code
 -   [Github Actions](https://github.com/features/actions) - Automatic CI (Testing)
+-   [Read the docs](https://readthedocs.org) - Documentation
 
 ## Contributing
 
@@ -219,3 +238,11 @@ This project is licensed under the GNU General Public License v3.0 - see the [LI
 -   Hat tip to anyone whose code was used
 -   Inspiration
 -   etc
+
+[license]: https://github.com/D3strukt0r/votifier-client-php/blob/master/LICENSE.txt
+[packagist]: https://packagist.org/packages/d3strukt0r/votifier-client
+[gh-action]: https://github.com/D3strukt0r/votifier-client-php/actions
+[coveralls]: https://coveralls.io/github/D3strukt0r/votifier-client-php
+[scrutinizer]: https://scrutinizer-ci.com/g/D3strukt0r/votifier-client-php/
+[codacy]: https://www.codacy.com/manual/D3strukt0r/votifier-client-php
+[rtfd]: https://readthedocs.org/projects/votifier-client-php/
