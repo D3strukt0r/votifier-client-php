@@ -97,9 +97,17 @@ The following code is another example of a full HTML page with the code from abo
 
     require __DIR__ . '/vendor/autoload.php';
 
-    use D3strukt0r\VotifierClient\ServerType\NuVotifier;
-    use D3strukt0r\VotifierClient\Vote;
-    use D3strukt0r\VotifierClient\VoteType\ClassicVote;
+    use D3strukt0r\Votifier\Client\Exception\NotVotifierException;
+    use D3strukt0r\Votifier\Client\Exception\NuVotifierChallengeInvalidException;
+    use D3strukt0r\Votifier\Client\Exception\NuVotifierException;
+    use D3strukt0r\Votifier\Client\Exception\NuVotifierSignatureInvalidException;
+    use D3strukt0r\Votifier\Client\Exception\NuVotifierUnknownServiceException;
+    use D3strukt0r\Votifier\Client\Exception\NuVotifierUsernameTooLongException;
+    use D3strukt0r\Votifier\Client\Exception\Socket\NoConnectionException;
+    use D3strukt0r\Votifier\Client\Exception\Socket\PackageNotReceivedException;
+    use D3strukt0r\Votifier\Client\Exception\Socket\PackageNotSentException;
+    use D3strukt0r\Votifier\Client\Server\NuVotifier;
+    use D3strukt0r\Votifier\Client\Vote\ClassicVote;
 
     if (isset($_GET['username'])) {
         $server = (new NuVotifier())
@@ -163,9 +171,17 @@ The following code is another example of a full HTML page with the code from abo
 
     require __DIR__ . '/vendor/autoload.php';
 
-    use D3strukt0r\VotifierClient\ServerType\NuVotifier;
-    use D3strukt0r\VotifierClient\Vote;
-    use D3strukt0r\VotifierClient\VoteType\ClassicVote;
+    use D3strukt0r\Votifier\Client\Exception\NotVotifierException;
+    use D3strukt0r\Votifier\Client\Exception\NuVotifierChallengeInvalidException;
+    use D3strukt0r\Votifier\Client\Exception\NuVotifierException;
+    use D3strukt0r\Votifier\Client\Exception\NuVotifierSignatureInvalidException;
+    use D3strukt0r\Votifier\Client\Exception\NuVotifierUnknownServiceException;
+    use D3strukt0r\Votifier\Client\Exception\NuVotifierUsernameTooLongException;
+    use D3strukt0r\Votifier\Client\Exception\Socket\NoConnectionException;
+    use D3strukt0r\Votifier\Client\Exception\Socket\PackageNotReceivedException;
+    use D3strukt0r\Votifier\Client\Exception\Socket\PackageNotSentException;
+    use D3strukt0r\Votifier\Client\Server\NuVotifier;
+    use D3strukt0r\Votifier\Client\Vote\ClassicVote;
 
     if (isset($_GET['username'])) {
         $server = (new NuVotifier())
