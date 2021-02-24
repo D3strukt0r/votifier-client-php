@@ -8,7 +8,9 @@
         "votifier"
     ],
     "homepage": "https://github.com/D3strukt0r/votifier-client-php",
-    "license": "GPL-3.0-or-later",
+    "license": [
+        "GPL-3.0-or-later"
+    ],
     "authors": [
         {
             "name": "Manuele Vaccari",
@@ -20,6 +22,7 @@
     "support": {
         "email": "manuele.vaccari@gmail.com",
         "issues": "https://github.com/D3strukt0r/votifier-client-php/issues",
+        "forum": "https://github.com/D3strukt0r/votifier-client-php/discussions",
         "wiki": "https://github.com/D3strukt0r/votifier-client-php/wiki",
         "source": "https://github.com/D3strukt0r/votifier-client-php",
         "docs": "https://votifier-client-php.readthedocs.io"
@@ -45,7 +48,7 @@
         "ext-pcre": "*"
     },
     "require-dev": {
-        "dealerdirect/phpcodesniffer-composer-installer": "0.6.0",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
         "friendsofphp/php-cs-fixer": "^2.16",
         "phpcompatibility/php-compatibility": "*",
         "phpunit/phpunit": "^9 || ^8 || ^7",

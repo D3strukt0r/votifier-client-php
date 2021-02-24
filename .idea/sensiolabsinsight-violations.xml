@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <analysis>
-  <link href="https://insight.sensiolabs.com/api/projects/bd3d1f70-187d-4717-9d8e-83f5fa408e21/analyses/2" rel="self" type="application/vnd.com.sensiolabs.insight+xml"/>
-  <link href="https://insight.sensiolabs.com/api/projects/bd3d1f70-187d-4717-9d8e-83f5fa408e21/analyses/2/status" rel="status" type="application/vnd.com.sensiolabs.insight+xml"/>
+  <link href="https://insight.sensiolabs.com/api/projects/bd3d1f70-187d-4717-9d8e-83f5fa408e21/analyses/1" rel="self" type="application/vnd.com.sensiolabs.insight+xml"/>
+  <link href="https://insight.sensiolabs.com/api/projects/bd3d1f70-187d-4717-9d8e-83f5fa408e21/analyses/1/status" rel="status" type="application/vnd.com.sensiolabs.insight+xml"/>
   <link href="https://insight.sensiolabs.com/api/projects/bd3d1f70-187d-4717-9d8e-83f5fa408e21" rel="project" type="application/vnd.com.sensiolabs.insight+xml"/>
-  <link href="https://insight.sensiolabs.com/projects/bd3d1f70-187d-4717-9d8e-83f5fa408e21/analyses/2" rel="self" type="text/html"/>
+  <link href="https://insight.sensiolabs.com/projects/bd3d1f70-187d-4717-9d8e-83f5fa408e21/analyses/1" rel="self" type="text/html"/>
   <status><![CDATA[finished]]></status>
   <violations>
     <violation severity="minor" category="codestyle" ignored="false">
@@ -22,7 +22,7 @@
 
 # Icon must end with two \r
 Icon]]></context>
-      <link href="https://insight.sensiolabs.com/projects/bd3d1f70-187d-4717-9d8e-83f5fa408e21/analyses/2?status=new#892780836" rel="self" type="text/html"/>
+      <link href="https://insight.sensiolabs.com/projects/bd3d1f70-187d-4717-9d8e-83f5fa408e21/analyses/1?status=new#928379055" rel="self" type="text/html"/>
     </violation>
     <violation severity="minor" category="codestyle" ignored="false">
       <line>34</line>
@@ -40,7 +40,7 @@ Icon
 ._*
 
 # Files that might appear in the root of a volume]]></context>
-      <link href="https://insight.sensiolabs.com/projects/bd3d1f70-187d-4717-9d8e-83f5fa408e21/analyses/2?status=new#892780837" rel="self" type="text/html"/>
+      <link href="https://insight.sensiolabs.com/projects/bd3d1f70-187d-4717-9d8e-83f5fa408e21/analyses/1?status=new#928379056" rel="self" type="text/html"/>
     </violation>
     <violation severity="minor" category="codestyle" ignored="false">
       <line>180</line>
@@ -58,7 +58,7 @@ ehthumbs.db
 ehthumbs_vista.db
 
 # Dump file]]></context>
-      <link href="https://insight.sensiolabs.com/projects/bd3d1f70-187d-4717-9d8e-83f5fa408e21/analyses/2?status=new#892780839" rel="self" type="text/html"/>
+      <link href="https://insight.sensiolabs.com/projects/bd3d1f70-187d-4717-9d8e-83f5fa408e21/analyses/1?status=new#928379061" rel="self" type="text/html"/>
     </violation>
     <violation severity="minor" category="codestyle" ignored="false">
       <line>182</line>
@@ -76,7 +76,92 @@ ehthumbs_vista.db
 # Dump file
 *.stackdump
 ]]></context>
-      <link href="https://insight.sensiolabs.com/projects/bd3d1f70-187d-4717-9d8e-83f5fa408e21/analyses/2?status=new#892780838" rel="self" type="text/html"/>
+      <link href="https://insight.sensiolabs.com/projects/bd3d1f70-187d-4717-9d8e-83f5fa408e21/analyses/1?status=new#928379060" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="info" category="codestyle" ignored="false">
+      <line>35</line>
+      <resource><![CDATA[phpdoc.dist.xml]]></resource>
+      <title>Text files should end with a valid new line character.</title>
+      <message><![CDATA[This file ends with no newline character, or with a different newline character than other files in your project. It won't render properly on a terminal, and it's considered a bad practice.]]></message>
+      <context start-line="30" end-line="35"><![CDATA[            </source>
+            <output>dox</output>
+        </guide>
+    </version>
+    <template name="default"/>
+</phpdocumentor>]]></context>
+      <link href="https://insight.sensiolabs.com/projects/bd3d1f70-187d-4717-9d8e-83f5fa408e21/analyses/1?status=new#928379059" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="minor" category="deadcode" ignored="false">
+      <line>83</line>
+      <resource><![CDATA[src/Server/Votifier.php]]></resource>
+      <title>Your project should not contain commented code</title>
+      <message><![CDATA[Commented out code reduces readability and lowers the code confidence for other developers. If it's common usage for debug, it should not be committed. Using a version control system, such code can be safely removed.]]></message>
+      <context start-line="78" end-line="88"><![CDATA[     * @throws InvalidArgumentException If one required parameter wasn't set
+     */
+    protected function checkVariablesForSocket(): void
+    {
+        if (!isset($this->host, $this->port)) {
+            // $countError = 0;
+            $errorMessage = '';
+
+            if (null === $this->host) {
+                $errorMessage .= 'The host variable wasn\'t set with "->setHost(...)".';
+                // ++$countError;]]></context>
+      <link href="https://insight.sensiolabs.com/projects/bd3d1f70-187d-4717-9d8e-83f5fa408e21/analyses/1?status=new#928379057" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="minor" category="deadcode" ignored="false">
+      <line>88</line>
+      <resource><![CDATA[src/Server/Votifier.php]]></resource>
+      <title>Your project should not contain commented code</title>
+      <message><![CDATA[Commented out code reduces readability and lowers the code confidence for other developers. If it's common usage for debug, it should not be committed. Using a version control system, such code can be safely removed.]]></message>
+      <context start-line="83" end-line="93"><![CDATA[            // $countError = 0;
+            $errorMessage = '';
+
+            if (null === $this->host) {
+                $errorMessage .= 'The host variable wasn\'t set with "->setHost(...)".';
+                // ++$countError;
+            }
+            // Not needed, as port has a default value
+            // if (null === $this->port) {
+            //     $errorMessage .= $countError > 0 ? ' ' : '';
+            //     $errorMessage .= 'The port variable wasn\'t set with "->setPort(...)".';]]></context>
+      <link href="https://insight.sensiolabs.com/projects/bd3d1f70-187d-4717-9d8e-83f5fa408e21/analyses/1?status=new#928379058" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="minor" category="deadcode" ignored="false">
+      <line>92</line>
+      <resource><![CDATA[src/Server/Votifier.php]]></resource>
+      <title>Your project should not contain commented code</title>
+      <message><![CDATA[Commented out code reduces readability and lowers the code confidence for other developers. If it's common usage for debug, it should not be committed. Using a version control system, such code can be safely removed.]]></message>
+      <context start-line="87" end-line="97"><![CDATA[                $errorMessage .= 'The host variable wasn\'t set with "->setHost(...)".';
+                // ++$countError;
+            }
+            // Not needed, as port has a default value
+            // if (null === $this->port) {
+            //     $errorMessage .= $countError > 0 ? ' ' : '';
+            //     $errorMessage .= 'The port variable wasn\'t set with "->setPort(...)".';
+            // }
+
+            throw new InvalidArgumentException($errorMessage);
+        }]]></context>
+      <link href="https://insight.sensiolabs.com/projects/bd3d1f70-187d-4717-9d8e-83f5fa408e21/analyses/1?status=new#928379062" rel="self" type="text/html"/>
+    </violation>
+    <violation severity="minor" category="deadcode" ignored="false">
+      <line>93</line>
+      <resource><![CDATA[src/Server/Votifier.php]]></resource>
+      <title>Your project should not contain commented code</title>
+      <message><![CDATA[Commented out code reduces readability and lowers the code confidence for other developers. If it's common usage for debug, it should not be committed. Using a version control system, such code can be safely removed.]]></message>
+      <context start-line="88" end-line="98"><![CDATA[                // ++$countError;
+            }
+            // Not needed, as port has a default value
+            // if (null === $this->port) {
+            //     $errorMessage .= $countError > 0 ? ' ' : '';
+            //     $errorMessage .= 'The port variable wasn\'t set with "->setPort(...)".';
+            // }
+
+            throw new InvalidArgumentException($errorMessage);
+        }
+    }]]></context>
+      <link href="https://insight.sensiolabs.com/projects/bd3d1f70-187d-4717-9d8e-83f5fa408e21/analyses/1?status=new#928379063" rel="self" type="text/html"/>
     </violation>
   </violations>
   <grades>
@@ -89,15 +174,14 @@ ehthumbs_vista.db
   <failed>false</failed>
   <grade><![CDATA[silver]]></grade>
   <next-grade><![CDATA[gold]]></next-grade>
-  <begin-at><![CDATA[2020-09-12T23:32:35+0000]]></begin-at>
-  <end-at><![CDATA[2020-09-12T23:34:31+0000]]></end-at>
-  <duration>12</duration>
-  <number>2</number>
+  <begin-at><![CDATA[2021-02-23T23:52:13+0000]]></begin-at>
+  <end-at><![CDATA[2021-02-23T23:53:27+0000]]></end-at>
+  <duration>16</duration>
+  <number>1</number>
   <altered>false</altered>
-  <remediation-cost>1</remediation-cost>
-  <nb-violations>4</nb-violations>
-  <reference><![CDATA[991eaed501fce2475f27016ada485d827111b9b4]]></reference>
-  <launched-by><![CDATA[xlpixel]]></launched-by>
+  <remediation-cost>3.25</remediation-cost>
+  <nb-violations>9</nb-violations>
+  <reference><![CDATA[98d638d30ee0fea1156b06e383a94e152145bbfa]]></reference>
   <configuration>
     <ignored-branches>
       <branch><![CDATA[gh-pages]]></branch>
@@ -167,10 +251,9 @@ ehthumbs_vista.db
     <notifications/>
   </configuration>
   <previous-analyses-references>
-    <analysis-reference number="2">991eaed501fce2475f27016ada485d827111b9b4</analysis-reference>
-    <analysis-reference number="1">61f7fa0f78cead3fca504e1bc82bb00d39b224ed</analysis-reference>
+    <analysis-reference number="1">98d638d30ee0fea1156b06e383a94e152145bbfa</analysis-reference>
   </previous-analyses-references>
-  <nb-violations-new>4</nb-violations-new>
+  <nb-violations-new>9</nb-violations-new>
   <nb-violations-existing>0</nb-violations-existing>
   <nb-violations-fixed>0</nb-violations-fixed>
   <nb-violations-ignored>0</nb-violations-ignored>
